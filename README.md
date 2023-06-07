@@ -13,6 +13,6 @@ To start contributing to the code, make your own branch directly in this reposit
 
 Fortnightly on TBD:
 
-*
+*June 8th, 9:30 am to 11:30 am
 
-*
+*June 22nd,  9:30 am to 11:30 am
