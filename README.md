@@ -21,10 +21,16 @@ Fortnightly on TBD:
 ## Task List
 
 Task 1 (Paul,Taimoor)- Find defnitions of ASC.
+
 Task 2 (Wilton)- Local (point by point) correlations between the ASC speed and Cross slope heat transport. Use the same method to define the 100m isobath, and using the daily climatology from OM2-01 RYF). Check if we have heat transports in the same timeframe as the daily u,v. 
+
 Task 3-  Subtract the daily climatology of ASC from the daily timeseries to look at variability at frequencies higher than seasonal.
+
 Task 4 (Fabio)- Interannual variability ( annual averages of speed, Heat transport in IAF simulation). Plot timeseries ( different regions) and correlations.
+
 Task 5 (Wilton)-  Meridional heat convergence in the East Antarctic Peninsula (and Western Ross sea). Check for additional gaps in the contour.
+
 Task 6 (Wilton,Fabio)- Alternative way of calculating the cross-shelf heat transport. Specifically, transpose the zonal and meridional components to be along slope and cross slope. Then calculate the heat convergence along-slope.
+
 Task 7 (Paul,Ellie,Fabio)- Literature review (Dynamics, and previous work on ASC vs cross slope heat transport).
 
