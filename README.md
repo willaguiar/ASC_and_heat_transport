@@ -20,9 +20,9 @@ Fortnightly on TBD:
 
 ## Task List
 
-Task 1 (Paul,Taimoor)- Find defnitions of ASC.
+Task 1 (Paul,Taimoor)- Find alternative ways to define the ASC (e.g., cluster analysis)
 
-Task 2 (Wilton)- Local (point by point) correlations between the ASC speed and Cross slope heat transport. Use the same method to define the 100m isobath, and using the daily climatology from OM2-01 RYF). Check if we have heat transports in the same timeframe as the daily u,v. 
+Task 2 (Wilton)- Local (point by point) correlations between the ASC speed and cross slope heat transport. Use the same method to define the 1000m isobath, and using the daily climatology from OM2-01 RYF). Check if we have heat transports in the same years of RYF simulation as the daily u,v. 
 
 Task 3-  Subtract the daily climatology of ASC from the daily timeseries to look at variability at frequencies higher than seasonal.
 
