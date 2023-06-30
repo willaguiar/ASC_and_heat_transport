@@ -24,7 +24,8 @@ import warnings # ignore these warnings
 warnings.filterwarnings("ignore", category = FutureWarning)
 warnings.filterwarnings("ignore", category = UserWarning)
 warnings.filterwarnings("ignore", category = RuntimeWarning)
-
+# IMPORTANT INFO: You will need to first have the Daily offline Heat transports calcualted ( run Daily_heat_trans_offline.py b4)
+# This code icks up the offline calculated daily HT, discounts the daily freezing point effect on HT and saves the result.
 if __name__ == '__main__':
 
 	climtas.nci.GadiClient()
@@ -459,7 +460,8 @@ if __name__ == '__main__':
 	print('Saving dataset')  
 	    
 	#finally saving dataset for this month    
-	outpath = '/g/data/x77/wf4500/ASC_project/cross_slope_transport/Daily/' + exp + '/Ant_cross_slope_heat_terms_online_'+str(isobath_depth)+'m_'+ start_time+'.nc'
+	#outpath = '/g/data/x77/wf4500/ASC_project/cross_slope_transport/Daily/' + exp + '/Ant_cross_slope_heat_terms_online_'+str(isobath_depth)+'m_'+ start_time+'.nc'
+	outpath = 'PUT HERE THE DESIRED OUTPATH'
 	ds.to_netcdf(outpath)
 	print('file saved in ' + outpath)
 	print('Finished successful')
