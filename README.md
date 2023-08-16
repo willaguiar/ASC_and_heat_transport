@@ -20,7 +20,8 @@ Fortnightly on TBD:
 
 ## Task List
 
-Task 1 (Paul,Taimoor)- Find alternative ways to define the ASC (e.g., cluster analysis)
+<del>Task 1 (Paul,Taimoor)- Find alternative ways to define the ASC (e.g., cluster analysis)
+- We decided to use different isobaths to calculate ASC and heat transport on. Our attempts to find a different definition weren't promising and we didn't want to spend too much time on this part.
 
 Task 2 (Wilton)- Local (point by point) correlations between the ASC speed and cross slope heat transport. Use the same method to define the 1000m isobath, and using the daily climatology from OM2-01 RYF). Check if we have heat transports in the same years of RYF simulation as the daily u,v. 
 
