@@ -23,6 +23,8 @@ Fortnightly on TBD:
 <del>Task 1 (Paul,Taimoor)- Find alternative ways to define the ASC (e.g., cluster analysis)
 - We decided to use different isobaths to calculate ASC and heat transport on. Our attempts to find a different definition weren't promising and we didn't want to spend too much time on this part.
 
+Task 1.1 (Taimoor) - Considering whats written above, we shifted to use the machine learning approach to classify the shelf regimes automatically.
+
 Task 2 (Wilton)- Local (point by point) correlations between the ASC speed and cross slope heat transport. Use the same method to define the 1000m isobath, and using the daily climatology from OM2-01 RYF). Check if we have heat transports in the same years of RYF simulation as the daily u,v. 
 
 Task 3-  Subtract the daily climatology of ASC from the daily timeseries to look at variability at frequencies higher than seasonal.
