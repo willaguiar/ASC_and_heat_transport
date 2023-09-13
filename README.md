@@ -39,6 +39,6 @@ Task 7 (Paul,Ellie,Fabio)- Literature review (Dynamics, and previous work on ASC
 
 
 
-## Important resolutions
+## Important updates
 #### Grid
 We previously discussed wether we should calculate the cross-slope heat transports and ASC speeds on the U-grid points (Cell corners), or on the XY stepwise grid (Cell faces). Both would require some interpolation, however, interpolating ASC speed is more straightforward, so we decided to stick to the XY stepwise grid (Cell faces) for all calculations. The python codes to calculate ASC speed on the proper grid are `/Python/*_along_slope_velocities_XYgrid.py`
