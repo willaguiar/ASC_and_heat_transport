@@ -1,4 +1,4 @@
-# # Compute monthly ASC along contour and save
+# # Compute monthly heat transport along contour offline (when is not outputed by the model). DOes not discounts the freezing temperature
 
 import cosima_cookbook as cc
 from cosima_cookbook import distributed as ccd
