@@ -1,4 +1,4 @@
-# # Compute monthly ASC along contour, on x,y grid and save
+# # Compute monthly ASC along the XY stepwise contour (grid faces) and saves it
 
 
 
