@@ -1,4 +1,4 @@
-# # Compute monthly ASC along contour and save
+# # Compute monthly cross-slope heat transport on IAF simulations, using monthly output. Already discounted freezing temperature.
 
 import cosima_cookbook as cc
 from cosima_cookbook import distributed as ccd
