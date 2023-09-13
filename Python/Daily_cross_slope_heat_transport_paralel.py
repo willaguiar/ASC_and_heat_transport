@@ -1,4 +1,4 @@
-# # Compute monthly ASC along contour and save, use paralel looping for more efficient computation
+# # Compute monthly ASC along contour and save, use paralel looping for more efficient computation. Already discounts the freezing temperature
 
 import cosima_cookbook as cc
 from cosima_cookbook import distributed as ccd
