@@ -1,4 +1,4 @@
-# # Compute monthly ASC along contour and save
+# # Compute monthly ASC along the U-grid contour and saves it
 
 
 
