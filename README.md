@@ -23,15 +23,22 @@ Fortnightly on TBD:
 <del>Task 1 (Paul,Taimoor)- Find alternative ways to define the ASC (e.g., cluster analysis)
 - We decided to use different isobaths to calculate ASC and heat transport on. Our attempts to find a different definition weren't promising and we didn't want to spend too much time on this part.
 
-Task 2 (Wilton)- Local (point by point) correlations between the ASC speed and cross slope heat transport. Use the same method to define the 1000m isobath, and using the daily climatology from OM2-01 RYF). Check if we have heat transports in the same years of RYF simulation as the daily u,v. 
+Task 2 (Wilton)- Local (point by point) correlations between the ASC speed and cross slope heat transport. [These correlations for the monthly and vertically averaged variables vary greatly along the contour](https://github.com/willaguiar/ASC_and_heat_transport/issues/1). The exception was a region in East Antarctica. 
+- Next: Do the same correlations using [a] Daily data, [b] vars integrated solely below the mixed layer to remove the effect of the surface poleward heat transport by the Ekman transport during the summer.
 
 Task 3-  Subtract the daily climatology of ASC from the daily timeseries to look at variability at frequencies higher than seasonal.
 
 Task 4 (Fabio)- Interannual variability ( annual averages of speed, Heat transport in IAF simulation). Plot timeseries ( different regions) and correlations.
 
-Task 5 (Wilton)-  Meridional heat convergence in the East Antarctic Peninsula (and Western Ross sea). Check for additional gaps in the contour.
+Task 5 (Wilton)-  Meridional heat convergence in the East Antarctic Peninsula (and Western Ross sea). [Check discussions on this task here](https://github.com/willaguiar/ASC_and_heat_transport/issues/10). Rerunning the cross-slope heat transport calculations using this array would use extra SUs, that we could save by analysing  the Antarctic Peninsula as a single sector and discounting the Meridional heat convergence in the sector. So we should stick to the contour with purely zonal convergence.
+
 
 Task 6 (Wilton,Fabio)- Alternative way of calculating the cross-shelf heat transport. Specifically, transpose the zonal and meridional components to be along slope and cross slope. Then calculate the heat convergence along-slope.
 
 Task 7 (Paul,Ellie,Fabio)- Literature review (Dynamics, and previous work on ASC vs cross slope heat transport).
 
+
+
+## Important resolutions
+#### Grid
+We previously discussed wether we should calculate the cross-slope heat transports and ASC speeds on the U-grid points (Cell corners), or on the XY stepwise grid (Cell faces). Both would require some interpolation, however, interpolating ASC speed is more straightforward, so we decided to stick to the XY stepwise grid (Cell faces) for all calculations. The python codes to calculate ASC speed on the proper grid are `/Python/*_along_slope_velocities_XYgrid.py`
