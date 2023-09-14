@@ -33,7 +33,7 @@ Task 4 (Fabio)- Interannual variability ( annual averages of speed, Heat transpo
 Task 5 (Wilton)-  Meridional heat convergence in the East Antarctic Peninsula (and Western Ross sea). [Check discussions on this task here](https://github.com/willaguiar/ASC_and_heat_transport/issues/10). Rerunning the cross-slope heat transport calculations using this array would use extra SUs, that we could save by analysing  the Antarctic Peninsula as a single sector and discounting the Meridional heat convergence in the sector. So we should stick to the contour with purely zonal convergence.
 
 
-Task 6 (Wilton,Fabio)- Alternative way of calculating the cross-shelf heat transport. Specifically, transpose the zonal and meridional components to be along slope and cross slope. Then calculate the heat convergence along-slope.
+Task 6 (Wilma)- Alternative way of calculating the cross-shelf heat transport. Specifically, transpose the zonal and meridional components to be along slope and cross slope. Then calculate the heat convergence along-slope.
 
 Task 7 (Paul,Ellie,Fabio)- Literature review (Dynamics, and previous work on ASC vs cross slope heat transport).
 
