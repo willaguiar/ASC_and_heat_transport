@@ -11,26 +11,29 @@ To start contributing to the code, make your own branch directly in this reposit
 
 ## Hackathon schedule (in Canberra/Sydney time zone)
 
-Fortnightly on TBD:
+Fortnightly Thursday mornings 9:30-11:30am.
 
-*June 8th, 9:30 am to 11:30 am
+## Data Plan
 
-*June 22nd,  9:30 am to 11:30 am
+Only use IAF cycle 3, we have daily temp, salt, uhrho_et, vhrho_nt.
 
+We need:
+* Contour data for 3 different isobaths: 700m, 1000m and 1500m.
+* Daily ASC speed on all isobaths, with depth coordinate. Also subset this so we have monthly data.
+* Daily cross slope heat transport on all isobaths, with depth coordinate. Also subset this so we have monthly data.
 
-## Task List
+## Dimensions to explore
 
-Task 1 (Paul,Taimoor)- Find alternative ways to define the ASC (e.g., cluster analysis)
+How do the correlations between ASC and cross-slope heat transport vary with:
+* Different isobaths.
+* Different depth ranges (e.g. depth integrated vs below 100m vs below 300m). This has the advantage of removing the Ekman layer which is controlled by different dynamics rather than the ASC. Also heat transport in the surface layer is not so relevant for delivering heat to ice shelves.
+* Different time frequencies. Interannual (use annual averages), seasonal (use monthly climatology), high frequency (use daily data and remove monthly climatology).
+* Different regions. Try: individual gridpoints on the isobath, small single trough-scale regions, large sectors, circumpolar integrals/averages.
+* Different measures of the ASC. How sensitive are correlations if we use different aspects of the ASC eg: depth average ASC speed, lower water column ASC speed, a measure of the ASC depth structure.
 
-Task 2 (Wilton)- Local (point by point) correlations between the ASC speed and cross slope heat transport. Use the same method to define the 1000m isobath, and using the daily climatology from OM2-01 RYF). Check if we have heat transports in the same years of RYF simulation as the daily u,v. 
+## Important updates
 
-Task 3-  Subtract the daily climatology of ASC from the daily timeseries to look at variability at frequencies higher than seasonal.
+#### Output locations
+Monthly vertically integrated CSHT, on the 1000m isobath (IAF, cycle 3): `/home/156/wf4500/x77_wf4500/ASC_project/cross_slope_transport/Monthly/01deg_jra55v140_iaf_cycle3`
 
-Task 4 (Fabio)- Interannual variability ( annual averages of speed, Heat transport in IAF simulation). Plot timeseries ( different regions) and correlations.
-
-Task 5 (Wilton)-  Meridional heat convergence in the East Antarctic Peninsula (and Western Ross sea). Check for additional gaps in the contour.
-
-Task 6 (Wilton,Fabio)- Alternative way of calculating the cross-shelf heat transport. Specifically, transpose the zonal and meridional components to be along slope and cross slope. Then calculate the heat convergence along-slope.
-
-Task 7 (Paul,Ellie,Fabio)- Literature review (Dynamics, and previous work on ASC vs cross slope heat transport).
 
