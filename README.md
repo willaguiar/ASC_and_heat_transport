@@ -11,41 +11,29 @@ To start contributing to the code, make your own branch directly in this reposit
 
 ## Hackathon schedule (in Canberra/Sydney time zone)
 
-Fortnightly on TBD:
+Fortnightly Thursday mornings 9:30-11:30am.
 
-*June 8th, 9:30 am to 11:30 am
+## Data Plan
 
-*June 22nd,  9:30 am to 11:30 am
+Only use IAF cycle 3, we have daily temp, salt, uhrho_et, vhrho_nt.
 
+We need:
+* Contour data for 3 different isobaths: 700m, 1000m and 1500m.
+* Daily ASC speed on all isobaths, with depth coordinate. Also subset this so we have monthly data.
+* Daily cross slope heat transport on all isobaths, with depth coordinate. Also subset this so we have monthly data.
 
-## Task List
+## Dimensions to explore
 
-<del>Task 1 (Paul,Taimoor)- Find alternative ways to define the ASC (e.g., cluster analysis)
-- We decided to use different isobaths to calculate ASC and heat transport on. Our attempts to find a different definition weren't promising and we didn't want to spend too much time on this part.
-
-Task 2 (Wilton)- Local (point by point) correlations between the ASC speed and cross slope heat transport. [These correlations for the monthly and vertically averaged variables vary greatly along the contour](https://github.com/willaguiar/ASC_and_heat_transport/issues/1). The exception was a region in East Antarctica. 
-- Next: Do the same correlations using [a] Daily data, [b] vars integrated solely below the mixed layer to remove the effect of the surface poleward heat transport by the Ekman transport during the summer.
-
-Task 3-  Subtract the daily climatology of ASC from the daily timeseries to look at variability at frequencies higher than seasonal.
-
-Task 4 (Fabio)- Interannual variability ( annual averages of speed, Heat transport in IAF simulation). Plot timeseries ( different regions) and correlations.
-
-Task 5 (Wilton)-  Meridional heat convergence in the East Antarctic Peninsula (and Western Ross sea). [Check discussions on this task here](https://github.com/willaguiar/ASC_and_heat_transport/issues/10). Rerunning the cross-slope heat transport calculations using this array would use extra SUs, that we could save by analysing  the Antarctic Peninsula as a single sector and discounting the Meridional heat convergence in the sector. So we should stick to the contour with purely zonal convergence.
-
-
-Task 6 (Wilma)- Alternative way of calculating the cross-shelf heat transport. Specifically, transpose the zonal and meridional components to be along slope and cross slope. Then calculate the heat convergence along-slope.
-
-Task 7 (Paul,Ellie,Fabio)- Literature review (Dynamics, and previous work on ASC vs cross slope heat transport).
-
-
+How do the correlations between ASC and cross-slope heat transport vary with:
+* Different isobaths.
+* Different depth ranges (e.g. depth integrated vs below 100m vs below 300m). This has the advantage of removing the Ekman layer which is controlled by different dynamics rather than the ASC. Also heat transport in the surface layer is not so relevant for delivering heat to ice shelves.
+* Different time frequencies. Interannual (use annual averages), seasonal (use monthly climatology), high frequency (use daily data and remove monthly climatology).
+* Different regions. Try: individual gridpoints on the isobath, small single trough-scale regions, large sectors, circumpolar integrals/averages.
+* Different measures of the ASC. How sensitive are correlations if we use different aspects of the ASC eg: depth average ASC speed, lower water column ASC speed, a measure of the ASC depth structure.
 
 ## Important updates
-#### Grid
-We previously discussed wether we should calculate the cross-slope heat transports and ASC speeds on the U-grid points (Cell corners), or on the XY stepwise grid (Cell faces). Both would require some interpolation, however, interpolating ASC speed is more straightforward, so we decided to stick to the XY stepwise grid (Cell faces) for all calculations. The python codes to calculate ASC speed on the proper grid are `/Python/*_along_slope_velocities_XYgrid.py`
 
 #### Output locations
-Daily vertically integrated CSHT, on the 1000m isobath (RYF, yr 2170 to 2179): `/home/156/wf4500/x77_wf4500/ASC_project/cross_slope_transport/Daily/01deg_jra55v13_ryf9091`
-
 Monthly vertically integrated CSHT, on the 1000m isobath (IAF, cycle 3): `/home/156/wf4500/x77_wf4500/ASC_project/cross_slope_transport/Monthly/01deg_jra55v140_iaf_cycle3`
 
 
