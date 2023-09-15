@@ -36,4 +36,6 @@ How do the correlations between ASC and cross-slope heat transport vary with:
 #### Output locations
 Monthly vertically integrated CSHT, on the 1000m isobath (IAF, cycle 3): `/home/156/wf4500/x77_wf4500/ASC_project/cross_slope_transport/Monthly/01deg_jra55v140_iaf_cycle3`
 
+Daily ASC speed on XY stepwise grid, as a function of depth (IAF, cycle 3): `/g/data/x77/wf4500/ASC_project/ASC_speed/daily_z/OM2_IAF_XYgrid/`
+
 
