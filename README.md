@@ -18,8 +18,8 @@ Fortnightly Thursday mornings 9:30-11:30am.
 Only use IAF cycle 3, we have daily temp, salt, uhrho_et, vhrho_nt.
 
 We need:
-* Contour data for 3 different isobaths: 700m, 1000m and 1500m.
-* Daily ASC speed on all isobaths, with depth coordinate. Also subset this so we have monthly data.
+* Contour data for 3 different isobaths: 650m, 1000m and 1500m.
+* Daily ASC speed on all isobaths, with depth coordinate. Also subset this so we have monthly data. _1000m now computed._
 * Daily cross slope heat transport on all isobaths, with depth coordinate. Also subset this so we have monthly data.
 
 ## Dimensions to explore
