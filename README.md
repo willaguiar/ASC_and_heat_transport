@@ -24,7 +24,7 @@ We need:
 
 ## Dimensions to explore
 
-Find focus on only East Antarctica, 0-160E.
+First focus on only East Antarctica, 0-160E.
 
 How do the correlations between ASC and cross-slope heat transport vary with:
 * Different isobaths.
