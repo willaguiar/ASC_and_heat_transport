@@ -39,5 +39,5 @@ Monthly vertically integrated CSHT, on the 1000m isobath (IAF, cycle 3): `/home/
 Daily ASC speed on XY stepwise grid, as a function of depth (IAF, cycle 3): `/g/data/x77/wf4500/ASC_project/ASC_speed/daily_z/OM2_IAF_XYgrid/`
 
 Daily ASC speed on XY stepwise grid, as a function of depth (IAF, cycle 3), binned into 3 longitude degrees bins: 
-/g/data/nm03/wf4500/ASC_project/model_data/access-om2/binned_ASC_speed/daily/IAF/
+`/g/data/nm03/wf4500/ASC_project/model_data/access-om2/binned_ASC_speed/daily/IAF/`
 
