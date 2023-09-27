@@ -24,6 +24,8 @@ We need:
 
 ## Dimensions to explore
 
+Find focus on only East Antarctica, 0-160E.
+
 How do the correlations between ASC and cross-slope heat transport vary with:
 * Different isobaths.
 * Different depth ranges (e.g. depth integrated vs below 100m vs below 300m). This has the advantage of removing the Ekman layer which is controlled by different dynamics rather than the ASC. Also heat transport in the surface layer is not so relevant for delivering heat to ice shelves.
