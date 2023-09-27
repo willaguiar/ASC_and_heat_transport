@@ -1,4 +1,4 @@
-# # Compute daily ASC along contour, on x,y grid and save in netcdfs for each month. U,V converted from uhrho and vhrho
+# # Bins the ASC speed (on XY stepwise grid) into 3 degree bins
 
 
 
