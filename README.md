@@ -43,3 +43,5 @@ Daily ASC speed on XY stepwise grid, over 1km isobath, as a function of depth (I
 Daily ASC speed on XY stepwise grid, over 1km isobath, as a function of depth (IAF, cycle 3), binned into 3 longitude degrees bins: 
 `/g/data/v45/wf4500/ASC_project_files/Binned_ASC_speed/OM2_IAF/`
 
+1500m contour (cleaned up version):
+`/g/data/x77/wgh581/Post_Process/access-om2/Antarctic_slope_contour_1500m_no_loops.npz`
