@@ -38,7 +38,7 @@ How do the correlations between ASC and cross-slope heat transport vary with:
 #### Output locations
 Monthly mask along 1km isobath defining the regimes: `/g/data/v45/txs156/ASC_classification/clustering_mask.nc`
 
-Monthly vertically integrated CSHT, across the 1km isobath (IAF, cycle 3): `/g/data/v45/wf4500/ASC_project_files/Cross_slope_heat_transport/OM2_IAF/monthly/vertically_integrated/` or at `/g/data/v45/wf4500/CSHT/`
+Monthly vertically integrated CSHT, across the 1km isobath (IAF, cycle 3): `/g/data/v45/wf4500/ASC_project_files/Cross_slope_heat_transport/OM2_IAF/monthly/vertically_integrated/` 
 
 Daily CSHT, across the 1km isobath , as a function of depth(IAF, cycle 3, all years): `/g/data/v45/wf4500/ASC_project_files/Cross_slope_heat_transport/OM2_IAF/daily_z/`
 
