@@ -18,11 +18,13 @@ Fortnightly Thursday mornings 9:30-11:30am.
 Only use IAF cycle 3, we have daily temp, salt, uhrho_et, vhrho_nt.
 
 We need:
-* Contour data for 3 different isobaths: 700m, 1000m and 1500m.
-* Daily ASC speed on all isobaths, with depth coordinate. Also subset this so we have monthly data.
+* Contour data for 3 different isobaths: 650m, 1000m and 1500m. _Done._
+* Daily ASC speed on all isobaths, with depth coordinate. Also subset this so we have monthly data. _1000m now computed._
 * Daily cross slope heat transport on all isobaths, with depth coordinate. Also subset this so we have monthly data.
 
 ## Dimensions to explore
+
+First focus on only East Antarctica, 0-160E.
 
 How do the correlations between ASC and cross-slope heat transport vary with:
 * Different isobaths.
@@ -34,6 +36,16 @@ How do the correlations between ASC and cross-slope heat transport vary with:
 ## Important updates
 
 #### Output locations
-Monthly vertically integrated CSHT, on the 1000m isobath (IAF, cycle 3): `/home/156/wf4500/x77_wf4500/ASC_project/cross_slope_transport/Monthly/01deg_jra55v140_iaf_cycle3`
+Monthly mask along 1km isobath defining the regimes: `/g/data/v45/txs156/ASC_classification/clustering_mask.nc`
 
+Monthly vertically integrated CSHT, across the 1km isobath (IAF, cycle 3): `/g/data/v45/wf4500/ASC_project_files/Cross_slope_heat_transport/OM2_IAF/monthly/vertically_integrated/` 
 
+Daily CSHT, across the 1km isobath , as a function of depth(IAF, cycle 3, all years): `/g/data/v45/wf4500/ASC_project_files/Cross_slope_heat_transport/OM2_IAF/daily_z/`
+
+Daily ASC speed on XY stepwise grid, over 1km isobath, as a function of depth (IAF, cycle 3): `/g/data/v45/wf4500/ASC_project_files/ASC_speed/OM2_IAF/`
+
+Daily ASC speed on XY stepwise grid, over 1km isobath, as a function of depth (IAF, cycle 3), binned into 3 longitude degrees bins: 
+`/g/data/v45/wf4500/ASC_project_files/Binned_ASC_speed/OM2_IAF/`
+
+1500m contour (cleaned up version):
+`/g/data/x77/wgh581/Post_Process/access-om2/Antarctic_slope_contour_1500m_no_loops.npz`

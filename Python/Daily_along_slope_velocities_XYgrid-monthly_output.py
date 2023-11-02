@@ -1,4 +1,4 @@
-# # Compute monthly ASC along contour, on x,y grid and save
+# # Compute daily ASC along contour, on x,y grid and save in netcdfs for each month. U,V converted from uhrho and vhrho
 
 
 
@@ -29,11 +29,12 @@ if __name__ == '__main__':
 	#DO NOT FORGET TO SET THE EXPERIMENT NAME (EXPT) AND TO ALTER LINES [44,51] AND [103,113]
 	session = cc.database.create_session()
 	# Define experiment in database
-	expt = '01deg_jra55v13_ryf9091'
+	expt = '01deg_jra55v140_iaf_cycle3'
 	
 	#expt0 = '01deg_jra55v140_iaf' #Line below only necessary for iaf. if ryf repeat name
 	
-	lat_slice = slice(-80, -59)
+	lat_slice = slice(-80, -57.6)
+	cutout_latind=510
 	
 	# Import bathymetry
 	hu = cc.querying.getvar(expt, 'hu', session, n=1)
@@ -44,12 +45,11 @@ if __name__ == '__main__':
 	
 	##THis part below doesnt need to be run for IAF experiments, BUT SHOULD BE UNCOMMENTED FOR RYF EXPERIMENTS  
 	## Change coordinate name
-	dxu.coords['ni'] = hu['xu_ocean'].values
-	dxu.coords['nj'] = hu['yu_ocean'].values
-	dyu.coords['ni'] = hu['xu_ocean'].values
-	dyu.coords['nj'] = hu['yu_ocean'].values
-	dxu = dxu.rename(({'ni':'xu_ocean', 'nj':'yu_ocean'}))
-	dyu = dyu.rename(({'ni':'xu_ocean', 'nj':'yu_ocean'}))
+	dxu.coords['xu_ocean'] = hu['xu_ocean'].values                            
+	dxu.coords['yu_ocean'] = hu['yu_ocean'].values                            
+	dyu.coords['xu_ocean'] = hu['xu_ocean'].values                            
+	dyu.coords['yu_ocean'] = hu['yu_ocean'].values                            
+
 	
 	# Select latitude range
 	hu = hu.sel(yu_ocean=lat_slice)
@@ -77,9 +77,7 @@ if __name__ == '__main__':
 	dhu_dx = grid.interp( grid.diff(ds.hu, 'X') / grid.interp(ds.dxu, 'X'), 'X')#, 'Y', boundary='extend')
 	dhu_dy = grid.interp( grid.diff(ds.hu, 'Y', boundary='extend') / grid.interp(ds.dyt, 'X'), 'Y', boundary='extend')# 'X')
 	
-	# Same as: (other option)
-	#dhu_dx = grid.interp(grid.diff(ds.hu, 'X'), 'X') / ds.dxu
-	#dhu_dy = grid.interp(grid.diff(ds.hu, 'Y', boundary='extend'), 'Y', boundary='extend') / ds.dyu
+
 	
 	# Select latitude slice
 	dhu_dx = dhu_dx.sel(yu_ocean=lat_slice)
@@ -88,35 +86,6 @@ if __name__ == '__main__':
 	# Calculate the magnitude of the topographic slope
 	slope = (dhu_dx**2 + dhu_dy**2)**0.5 #before it was : xu.sqrt(dhu_dx**2 + dhu_dy**2)
 	
-	    
-	    
-	    
-	#This code calcualtes U_along speed on X,Y grid.  for reference   
-	    
-	               
-	#
-	#   Legend:
-	#   o = u,v, original location
-	#   Ux,Vx = u,v interpolated into the x grid    
-	#   Uy,Vy = u,v interpolated into the y grid    
-	#   t = Tracer grid (t,n)  
-	#
-	#
-	#
-	#         Uy,Vy (-279.95,-81.09)
-	#           ^
-	#           | 
-	#   -------(+)------o=(u,v)(-279.90,-81.09)
-	#  |                |   
-	#  |                |
-	#  |                |
-	#  |       (t)     (+)--> Ux,Vx (-279.90,-81.11)
-	#  |                |
-	#  |                |
-	#  |                |
-	#   ----------------    
-	    
-	    
 	    
 	    
 	 
@@ -150,8 +119,8 @@ if __name__ == '__main__':
 	gridy = xgcm.Grid(dsy, periodic=['X'])
 	
 	# Calculating the slope on the x and y grid
-	slope_xg=gridx.interp(dsx.slope, 'Y').isel(yt_ocean=slice(0,484))
-	slope_yg=gridx.interp(dsx.slope, 'X').isel(yu_ocean=slice(0,484))
+	slope_xg=gridx.interp(dsx.slope, 'Y').isel(yt_ocean=slice(0,cutout_latind))
+	slope_yg=gridx.interp(dsx.slope, 'X').isel(yu_ocean=slice(0,cutout_latind))
 	    
 	
 	###################################################################    
@@ -180,71 +149,57 @@ if __name__ == '__main__':
 	gridy = xgcm.Grid(dsy, periodic=['X'])
 	
 	# Calculating the slope on the x and y grid
-	dhu_dy_xg=gridx.interp(dsx.dhu_dy, 'Y').isel(yt_ocean=slice(0,484))
-	dhu_dy_yg=gridx.interp(dsx.dhu_dy, 'X').isel(yu_ocean=slice(0,484))
-	dhu_dx_xg=gridx.interp(dsx.dhu_dx, 'Y').isel(yt_ocean=slice(0,484))
-	dhu_dx_yg=gridx.interp(dsx.dhu_dx, 'X').isel(yu_ocean=slice(0,484))
+	dhu_dy_xg=gridx.interp(dsx.dhu_dy, 'Y').isel(yt_ocean=slice(0,cutout_latind))
+	dhu_dy_yg=gridx.interp(dsx.dhu_dy, 'X').isel(yu_ocean=slice(0,cutout_latind))
+	dhu_dx_xg=gridx.interp(dsx.dhu_dx, 'Y').isel(yt_ocean=slice(0,cutout_latind))
+	dhu_dx_yg=gridx.interp(dsx.dhu_dx, 'X').isel(yu_ocean=slice(0,cutout_latind))
 	
 	
 	
 	  
 	# Load velocity data
 	#yearinit=2177
-	yearinit = sys.argv[1]
+	yearinit = sys.argv[2]
+	imonth = int(sys.argv[1])
+	month = str(int(sys.argv[1])) 
+	month = month.zfill(2)
 	monthseries=['01','02','03','04','05','06','07','08','09','10','11','12']
 	dayseries=['31','28','31','30','31','30','31','31','30','31','30','31'] 
 	mi=0
 	isobath_depth = 1000
 	test = np.int(yearinit)+1
+	#Accounting for Leap years
+	long_feby=np.arange(1960,2028,4)
+	if yearinit in long_feby: dayseries=['31','29','31','30','31','30','31','31','30','31','30','31'] ; print('this is a leap year')
 #	print(test)  
 # 	print('isobath depth is ' + str(isobath_depth) + ' m')
-	for n in np.arange(0,12): 
-		start_time=str(yearinit) + '-' + monthseries[n]+ '-01'
-		if n <= 10:
-		    end_time=str(yearinit) + '-' + monthseries[n]+ '-' + dayseries[n]
-		    
-		if n >= 11:   
-		    end_time=str(yearinit) + '-01-01'
+	for n in np.arange(0,1): 
+        
+		start_time=str(yearinit) + '-' + month + '-01'
+		end_time=str(yearinit) + '-' + month + '-' + dayseries[imonth-1]
+
 		
-		
+		print(start_time)		
 		print(end_time)
-#		if n >= 10:
-#		    end_time=str(int(np.int((yearinit)+1)) + '-01'
-#		    print(str(n))        
 #		
-#		
-#		     end_time=str(yearinit) + '-' + monthseries[n+1]       
-#		else:
-#		    end_time=str(int(np.int((yearinit)+1)) + '-01'
-#		
-#		print('End time is ' + end_time)
-#		
-		u = cc.querying.getvar(expt, 'u', session,start_time=start_time, end_time=end_time,frequency='1 daily')
-		u = u.sel(time=slice(start_time,end_time)).sel(yu_ocean=lat_slice)
-		v = cc.querying.getvar(expt, 'v', session,start_time=start_time, end_time=end_time,frequency='1 daily')
-		v = v.sel(time=slice(start_time,end_time)).sel(yu_ocean=lat_slice)
-		
-		
-		
-		
-		
-		
-		   
-# 	    #     #if IAF run lines this way
-# 	    # u = cc.querying.getvar(expt, 'u', session, start_time=start_time, end_time=end_time, frequency='1 monthly')
-# 	    # u = u.sel(time=slice(start_time,end_time)).sel(yu_ocean=lat_slice).isel(time=0)
-# 	    # v = cc.querying.getvar(expt, 'v', session, start_time=start_time, end_time=end_time, frequency='1 monthly')
-# 	    # v = v.sel(time=slice(start_time,end_time)).sel(yu_ocean=lat_slice).isel(time=0)
-		
-		
-		
-		
-		
-		
+		uhrho = cc.querying.getvar(expt, 'uhrho_et', session,start_time=start_time, end_time=end_time,frequency='1 daily')
+		uhrho = uhrho.sel(time=slice(start_time,end_time)).sel(yt_ocean=lat_slice)
+		vhrho = cc.querying.getvar(expt, 'vhrho_nt', session,start_time=start_time, end_time=end_time,frequency='1 daily')
+		vhrho = vhrho.sel(time=slice(start_time,end_time)).sel(yt_ocean=lat_slice)
+
+		rho=1035
+		ht = cc.querying.getvar(expt, 'dzt', session,start_time=start_time, end_time=end_time,frequency='1 monthly')
+		ht=ht.sel(time=slice(start_time,end_time)).sel(yt_ocean=lat_slice).isel(time=0,drop=True)	
+
+		u=(uhrho/ht)/rho
+		v=(vhrho/ht)/rho
+		u.name='u'
+		v.name='v'
 		
 		
 		####################Interpolating U to x,y grid!!
 		gridx = xr.open_mfdataset(path_to_folder+'ocean_grid.nc', combine='by_coords')
+		gridx=gridx.isel(time=0,drop=True)                           
 		dsx = xr.merge([u, gridx])
 		dsx.coords['xt_ocean'].attrs.update(axis='X')
 		dsx.coords['xu_ocean'].attrs.update(axis='X', c_grid_axis_shift=0.5)
@@ -257,6 +212,7 @@ if __name__ == '__main__':
 		
 		#y
 		gridy = xr.open_mfdataset(path_to_folder+'ocean_grid.nc', combine='by_coords')
+		gridy=gridy.isel(time=0,drop=True)                          
 		dsy = xr.merge([u, gridy])
 		dsy.coords['xt_ocean'].attrs.update(axis='X')
 		dsy.coords['xu_ocean'].attrs.update(axis='X', c_grid_axis_shift=0.5)
@@ -267,8 +223,8 @@ if __name__ == '__main__':
 		gridy = xgcm.Grid(dsy, periodic=['X'])
 		
 		# Calculating the slope on the x and y grid
-		u_xg=gridx.interp(dsx.u, 'Y').isel(yt_ocean=slice(0,484))
-		u_yg=gridx.interp(dsy.u, 'X').isel(yu_ocean=slice(0,484))
+		u_xg=gridx.interp(dsx.u, 'X').isel(yt_ocean=slice(0,cutout_latind))
+		u_yg=gridx.interp(dsy.u, 'Y').isel(yu_ocean=slice(0,cutout_latind))
 		        
 		        
 		
@@ -277,6 +233,7 @@ if __name__ == '__main__':
 		        
 		####################Interpolating V to x,y grid!!
 		gridx = xr.open_mfdataset(path_to_folder+'ocean_grid.nc', combine='by_coords')
+		gridx=gridx.isel(time=0,drop=True)                       
 		dsx = xr.merge([v, gridx])
 		dsx.coords['xt_ocean'].attrs.update(axis='X')
 		dsx.coords['xu_ocean'].attrs.update(axis='X', c_grid_axis_shift=0.5)
@@ -288,6 +245,7 @@ if __name__ == '__main__':
 		
 		#y
 		gridy = xr.open_mfdataset(path_to_folder+'ocean_grid.nc', combine='by_coords')
+		gridy=gridy.isel(time=0,drop=True)                     
 		dsy = xr.merge([v, gridy])
 		dsy.coords['xt_ocean'].attrs.update(axis='X')
 		dsy.coords['xu_ocean'].attrs.update(axis='X', c_grid_axis_shift=0.5)
@@ -297,8 +255,8 @@ if __name__ == '__main__':
 		gridy = xgcm.Grid(dsy, periodic=['X'])
 		
 		# Calculating the slope on the x and y grid
-		v_xg=gridx.interp(dsx.v, 'Y').isel(yt_ocean=slice(0,484))
-		v_yg=gridx.interp(dsy.v, 'X').isel(yu_ocean=slice(0,484))
+		v_xg=gridx.interp(dsx.v, 'X').isel(yt_ocean=slice(0,cutout_latind))
+		v_yg=gridx.interp(dsy.v, 'Y').isel(yu_ocean=slice(0,cutout_latind))
 		        
 		        
 		
@@ -306,14 +264,14 @@ if __name__ == '__main__':
 		Uxg_along = u_xg*dhu_dy_xg/slope_xg - v_xg*dhu_dx_xg/slope_xg
 		Uyg_along = u_yg*dhu_dy_yg/slope_yg - v_yg*dhu_dx_yg/slope_yg
 		############################ Cross-slope velocity       
-		#Vxg_cross = u_xg*dhu_dx_xg/slope_xg + v_xg*dhu_dy_xg/slope_xg        
-		#Vyg_cross = u_yg*dhu_dx_yg/slope_yg + v_yg*dhu_dy_yg/slope_yg
+		Vxg_cross = u_xg*dhu_dx_xg/slope_xg + v_xg*dhu_dy_xg/slope_xg        
+		Vyg_cross = u_yg*dhu_dx_yg/slope_yg + v_yg*dhu_dy_yg/slope_yg
 		
 		 
 		
 		# import edges of st_ocean and add lat/lon dimensions:
 		st_edges_ocean = cc.querying.getvar(expt, 'st_edges_ocean', session, start_time=start_time, end_time=end_time, n=1)
-		st_edges_array = st_edges_ocean.expand_dims({'yu_ocean':u.yu_ocean,'xu_ocean':u.xu_ocean}, axis=[1,2])
+		st_edges_array = st_edges_ocean.expand_dims({'yu_ocean':hu.yu_ocean,'xu_ocean':hu.xu_ocean}, axis=[1,2])
 		
 		# adjust edges at bottom for partial thickness:
 		st_edges_with_partial = st_edges_array.where(st_edges_array<hu, other=hu)
@@ -332,10 +290,14 @@ if __name__ == '__main__':
 		########### Import Adeles 1km contour on X,Y grid                
 		outfile = '/g/data/v45/akm157/model_data/access-om2/Antarctic_slope_contour_'+str(isobath_depth)+'m.npz'
 		data = np.load(outfile)
-		mask_y_transport = data['mask_y_transport']
-		mask_x_transport = data['mask_x_transport']
+		mask_y_transport = data['mask_y_transport']; 
+		mask_y_transport=mask_y_transport[:cutout_latind,:]       ##############################
+		mask_x_transport = data['mask_x_transport']; 
+		mask_x_transport=mask_x_transport[:cutout_latind,:]		################################
 		mask_y_transport_numbered = data['mask_y_transport_numbered']
+		mask_y_transport_numbered=mask_y_transport_numbered[:cutout_latind,:]		################################
 		mask_x_transport_numbered = data['mask_x_transport_numbered']
+		mask_x_transport_numbered=mask_x_transport_numbered[:cutout_latind,:]		################################
 		
 		
 		#cutting the matrices
@@ -351,15 +313,35 @@ if __name__ == '__main__':
 		
 		
 		
-		mask_x_transport =xr.DataArray(data['mask_x_transport']).assign_coords({"dim_0": np.array(yt_ocean0),"dim_1": np.array(xu_ocean0)}).rename(dim_0="yt_ocean",dim_1="xu_ocean")
-		mask_y_transport =xr.DataArray(data['mask_y_transport']).assign_coords({"dim_0": np.array(yt_ocean0),"dim_1": np.array(xu_ocean0)}).rename(dim_0="yu_ocean",dim_1="xt_ocean")
-		mask_x_transport_numbered =xr.DataArray(data['mask_x_transport_numbered']).assign_coords({"dim_0": np.array(yt_ocean0),"dim_1": np.array(xt_ocean0)}).rename(dim_0="yt_ocean",dim_1="xt_ocean")
-		mask_y_transport_numbered =xr.DataArray(data['mask_y_transport_numbered']).assign_coords({"dim_0": np.array(yt_ocean0),"dim_1": np.array(xt_ocean0)}).rename(dim_0="yt_ocean",dim_1="xt_ocean")
+		mask_x_transport =xr.DataArray(data['mask_x_transport']).assign_coords({"dim_0": np.array(yt_ocean0),"dim_1": np.array(xu_ocean0)}).rename(dim_0="y_ocean",dim_1="x_ocean")
+		mask_x_transport=mask_x_transport[:cutout_latind,:]       ##############################
+		mask_y_transport =xr.DataArray(data['mask_y_transport']).assign_coords({"dim_0": np.array(yt_ocean0),"dim_1": np.array(xu_ocean0)}).rename(dim_0="y_ocean",dim_1="x_ocean")
+		mask_y_transport=mask_y_transport[:cutout_latind,:]		################################		
+		mask_x_transport_numbered =xr.DataArray(data['mask_x_transport_numbered']).assign_coords({"dim_0": np.array(yt_ocean0),"dim_1": np.array(xu_ocean0)}).rename(dim_0="y_ocean",dim_1="x_ocean")          ##################
+		mask_x_transport_numbered=mask_x_transport_numbered[:cutout_latind,:]		################################		
+		mask_y_transport_numbered =xr.DataArray(data['mask_y_transport_numbered']).assign_coords({"dim_0": np.array(yu_ocean0),"dim_1": np.array(xt_ocean0)}).rename(dim_0="y_ocean",dim_1="x_ocean")          ##################
+		mask_y_transport_numbered=mask_y_transport_numbered[:cutout_latind,:]		################################
 		
 		num_points = int(np.maximum(np.max(mask_y_transport_numbered),np.max(mask_x_transport_numbered)))                
 		                
+			                
 		
+
+		# Create the contour order data-array. Note that in this procedure the x-grid counts have x-grid
+		#   dimensions and the y-grid counts have y-grid dimensions, but these are implicit, the dimension 
+		#   *names* are kept general across the counts, the generic y_ocean, x_ocean, so that concatening works
+		#   but we dont double up with numerous counts for one lat/lon point.
 		
+		# stack contour data into 1d:
+		mask_x_numbered_1d = mask_x_transport_numbered.stack(contour_index = ['y_ocean', 'x_ocean'])
+		mask_x_numbered_1d = mask_x_numbered_1d.where(mask_x_numbered_1d > 0, drop = True)
+		
+		mask_y_numbered_1d = mask_y_transport_numbered.stack(contour_index = ['y_ocean', 'x_ocean'])
+		mask_y_numbered_1d = mask_y_numbered_1d.where(mask_y_numbered_1d > 0, drop = True)
+		
+		contour_ordering = xr.concat((mask_x_numbered_1d, mask_y_numbered_1d), dim = 'contour_index')
+		contour_ordering = contour_ordering.sortby(contour_ordering)
+		contour_index_array = np.arange(1, len(contour_ordering)+1)
 		
 		
 		############### Getting the lon,lat along contour in the X,Y contour
@@ -373,7 +355,7 @@ if __name__ == '__main__':
 		    jj = int(np.where(mask_x_transport_numbered==count)[0])
 		    ii = int(np.where(mask_x_transport_numbered==count)[1])   
 		    lon_along_contour[count-1] = xu_ocean0[ii].values
-		    lat_along_contour[count-1] = mask_x_transport_numbered.yt_ocean[jj].values
+		    lat_along_contour[count-1] = mask_x_transport_numbered.y_ocean[jj].values
 		    
 		# locations for meridional transport:
 		y_indices_masked = mask_y_transport_numbered.stack().values
@@ -382,91 +364,53 @@ if __name__ == '__main__':
 		    count = int(count)
 		    jj = np.where(mask_y_transport_numbered==count)[0]
 		    ii = np.where(mask_y_transport_numbered==count)[1]
-		    lon_along_contour[count-1] = mask_x_transport_numbered.xt_ocean[ii].values
+		    lon_along_contour[count-1] = mask_x_transport_numbered.x_ocean[ii].values
 		    lat_along_contour[count-1] = yu_ocean0[jj].values
 		
 		
-		
+		print('loading transposed Us')		
 		# Importing the Along-slope speed on x and y grid
 		Uyg_along0=Uyg_along.load()
 		Uxg_along0=Uxg_along.load()
-		#Vyg_cross0=Vyg_cross.load()
-		#Vxg_cross0=Vxg_cross.load()
-		                
-		 
-		
-		
-		
-		#nd will be the number of days in the month
-		ndi=np.sort(np.tile(np.array(range(int(dayseries[n]))),75)); #array of days in that particular month
-		nzi=np.tile(np.array(range(75)),int(dayseries[n])) #array of vertical levels
-		nzd=75*int(dayseries[n]) #number of iterations in loop
+		Vyg_cross0=Vyg_cross.load()
+		Vxg_cross0=Vxg_cross.load()
 
-		
-		from joblib import Parallel, delayed
-		def contour_extractor(num_points,mask_y_transport_numbered,mask_x_transport_numbered,x_indices,Uxg_along0,Uyg_along0, ndi,nzi,nzd):  
-		    #U_along_slope_z= np.zeros((75,num_points))
-		    nd=ndi[nzd]
-		    nz=nzi[nzd]
-		    U_along_slope = np.zeros((num_points))
-		    V_along_slope = np.zeros((num_points))
-		    for count in x_indices:
-		        count = int(count)
-		        jj = int(np.where(mask_x_transport_numbered==count)[0])
-		        ii = int(np.where(mask_x_transport_numbered==count)[1])
-		        if jj>483: jj=483
-		        U_along_slope[count-1] += Uxg_along0[nd,nz,jj,ii]            
-		    # locations for meridional transport, already calculated indices above:
-		    for count in y_indices:
-		        count = int(count)
-		        jj = int(np.where(mask_y_transport_numbered==count)[0])
-		        ii = int(np.where(mask_y_transport_numbered==count)[1])
-		        if jj>483: jj=483
-		        U_along_slope[count-1] += Uyg_along0[nd,nz,jj,ii]
-		    return U_along_slope
-		
-		
-		results = Parallel(n_jobs=-1)(delayed(contour_extractor)(num_points,mask_y_transport_numbered,mask_x_transport_numbered,x_indices,Uxg_along0,Uyg_along0, ndi,nzi,nzdi) for nzdi in range(nzd))
-		U_along_slope_z=np.reshape(results,[int(dayseries[n]),75,num_points])
-		
-		
-		
-		
-		
-		
-		
-		#from joblib import Parallel, delayed
-		#def contour_extractor(num_points,mask_y_transport_numbered,mask_x_transport_numbered,x_indices,Vxg_cross0,Vyg_cross0, ndi,nzi,nzd):  
-		#    #U_along_slope_z= np.zeros((75,num_points))
-		#    nd=ndi[nzd]
-		#    nz=nzi[nzd]
-		#    U_along_slope = np.zeros((num_points))
-		#    V_cross_slope = np.zeros((num_points))
-		#    for count in x_indices:
-		#        count = int(count)
-		#        jj = int(np.where(mask_x_transport_numbered==count)[0])
-		#        ii = int(np.where(mask_x_transport_numbered==count)[1])
-		#        if jj>483: jj=483
-		#        V_cross_slope[count-1] += Vxg_cross0[nd,nz,jj,ii]                
-		#    # locations for meridional transport, already calculated indices above:
-		#    for count in y_indices:
-		#        count = int(count)
-		#        jj = int(np.where(mask_y_transport_numbered==count)[0])
-		#        ii = int(np.where(mask_y_transport_numbered==count)[1])
-		#        if jj>483: jj=483
-		#        V_cross_slope[count-1] += Vyg_cross0[nd,nz,jj,ii] 
-		#    return V_cross_slope
-		#
-		#
-		#del results
-		#results = Parallel(n_jobs=-1)(delayed(contour_extractor)(num_points,mask_y_transport_numbered,mask_x_transport_numbered,x_indices,Uxg_along0,Uyg_along0, ndi,nzi,nzdi) for nzdi in range(nzd))
-		#V_cross_slope_z=results        
-		        
-		              
+		Uxg_along0=Uxg_along0.rename(yt_ocean='y_ocean',xu_ocean='x_ocean')
+		Uyg_along0=Uyg_along0.rename(yu_ocean='y_ocean',xt_ocean='x_ocean')
+		Vxg_cross0 = Vxg_cross0.rename(yt_ocean='y_ocean',xu_ocean='x_ocean')
+		Vyg_cross0 = Vyg_cross0.rename(yu_ocean='y_ocean',xt_ocean='x_ocean')                
 		 
+		
+
+		# stack transports into 1d and drop any points not on contour:
+		x_along_1d = Uxg_along0.stack(contour_index = ['y_ocean', 'x_ocean'])
+		x_along_1d = x_along_1d.where(mask_x_numbered_1d>0, drop = True)
+		y_along_1d = Uyg_along0.stack(contour_index = ['y_ocean', 'x_ocean'])
+		y_along_1d = y_along_1d.where(mask_y_numbered_1d>0, drop = True)
+
+		# combine all points on contour:
+		Ualong = xr.concat((x_along_1d, y_along_1d), dim = 'contour_index')
+		Ualong = Ualong.sortby(contour_ordering)
+		Ualong.coords['contour_index'] = contour_index_array
+		Ualong = Ualong.load()	
+
+
+		# stack transports into 1d and drop any points not on contour:
+		x_cross_1d = Vxg_cross0.stack(contour_index = ['y_ocean', 'x_ocean'])
+		x_cross_1d = x_cross_1d.where(mask_x_numbered_1d>0, drop = True)
+		y_cross_1d = Vyg_cross0.stack(contour_index = ['y_ocean', 'x_ocean'])
+		y_cross_1d = y_cross_1d.where(mask_y_numbered_1d>0, drop = True)
+		
+		# combine all points on contour:
+		Ucross = xr.concat((x_cross_1d, y_cross_1d), dim = 'contour_index')
+		Ucross = Ucross.sortby(contour_ordering)
+		Ucross.coords['contour_index'] = contour_index_array
+		Ucross = Ucross.load()
+
 		 
 		#Interpolating Thickness to X,Y grid
 		gridx = xr.open_mfdataset(path_to_folder+'ocean_grid.nc', combine='by_coords')
+		gridx=gridx.isel(time=0,drop=True) 
 		dsx = xr.merge([thickness, gridx])
 		dsx.coords['xt_ocean'].attrs.update(axis='X')
 		dsx.coords['xu_ocean'].attrs.update(axis='X', c_grid_axis_shift=0.5)
@@ -477,6 +421,7 @@ if __name__ == '__main__':
 		
 		#y
 		gridy = xr.open_mfdataset(path_to_folder+'ocean_grid.nc', combine='by_coords')
+		gridy=gridy.isel(time=0,drop=True)         
 		dsy = xr.merge([thickness, gridy])
 		dsy.coords['xt_ocean'].attrs.update(axis='X')
 		dsy.coords['xu_ocean'].attrs.update(axis='X', c_grid_axis_shift=0.5)
@@ -485,41 +430,29 @@ if __name__ == '__main__':
 		gridy = xgcm.Grid(dsy, periodic=['X'])
 		
 		# Calculating the slope on the x and y grid
-		thickness_xg=gridx.interp(dsx.st_edges_ocean, 'Y').isel(yt_ocean=slice(0,484))
-		thickness_yg=gridx.interp(dsy.st_edges_ocean, 'X').isel(yu_ocean=slice(0,484))
+		thickness_xg=gridx.interp(dsx.st_edges_ocean, 'Y').isel(yt_ocean=slice(0,cutout_latind))
+		thickness_yg=gridx.interp(dsy.st_edges_ocean, 'X').isel(yu_ocean=slice(0,cutout_latind))
 		        
 		       
 		############################ Loading thicknesses     
 		thickness_yg0=thickness_yg.load()
 		thickness_xg0=thickness_xg.load()       
 		        
+		# Calculating the slope on the x and y grid
+		thickness_xg=thickness_xg.rename(yt_ocean='y_ocean',xu_ocean='x_ocean')
+		thickness_yg=thickness_yg.rename(yu_ocean='y_ocean',xt_ocean='x_ocean')
 		
+		# stack transports into 1d and drop any points not on contour:
+		x_thick_1d = thickness_xg.stack(contour_index = ['y_ocean', 'x_ocean'])
+		x_thick_1d = x_thick_1d.where(mask_x_numbered_1d>0, drop = True)
+		y_thick_1d = thickness_yg.stack(contour_index = ['y_ocean', 'x_ocean'])
+		y_thick_1d = y_thick_1d.where(mask_y_numbered_1d>0, drop = True)
 		
-		from joblib import Parallel, delayed
-		def contour_extractor(num_points,mask_y_transport_numbered,mask_x_transport_numbered,x_indices,thickness_yg0,thickness_xg0, nz):  
-		    thickness_slope = np.zeros((num_points))
-		    for count in x_indices:
-		        count = int(count)
-		        jj = int(np.where(mask_x_transport_numbered==count)[0])
-		        ii = int(np.where(mask_x_transport_numbered==count)[1])
-		        if jj>483: jj=483
-		        thickness_slope[count-1] += thickness_xg0[nz,jj,ii]                
-		    # locations for meridional transport, already calculated indices above:
-		    for count in y_indices:
-		        count = int(count)
-		        jj = int(np.where(mask_y_transport_numbered==count)[0])
-		        ii = int(np.where(mask_y_transport_numbered==count)[1])
-		        if jj>483: jj=483
-		        thickness_slope[count-1] += thickness_yg0[nz,jj,ii] 
-		    return thickness_slope
-		
-		
-		del results
-		results = Parallel(n_jobs=-1)(delayed(contour_extractor)(num_points,mask_y_transport_numbered,mask_x_transport_numbered,x_indices,Uxg_along0,Uyg_along0, nz) for nz in range(75))
-		thickness_slope_z=results    
-		
-		
-		#we  will need distance along the contour
+		# combine all points on contour:
+		Uthick = xr.concat((x_thick_1d, y_thick_1d), dim = 'contour_index')
+		Uthick = Uthick.sortby(contour_ordering)
+		Uthick.coords['contour_index'] = contour_index_array
+		Uthick = Uthick.load()
 		
 		
 		distance_along_contour=np.ones(num_points)
@@ -536,21 +469,29 @@ if __name__ == '__main__':
 		
 		distance_along_contour=np.cumsum(distance_along_contour)
 		        
-		         
+         
 		        
 		# PREVIOUS SAVEDIR TO LOCATE THE FILES save_dir  = '/g/data/x77/wf4500/ASC_project/ASC_speed/monthly/OM2_RYF/'
-		save_dir  = '/g/data/x77/wf4500/ASC_project/ASC_speed/daily_z/OM2_RYF_XYgrid/'        
+		save_dir  = '/g/data/x77/wf4500/ASC_project/ASC_speed/daily_z/OM2_IAF_XYgrid/'        
 		file_name = 'Antarctic_slope_contour_1km_velocities_'
+		print('saving file on... ' + save_dir + file_name + start_time +"_uv.nc")	
 		
-		data_u=xr.DataArray((U_along_slope_z),name="u_along_contour",dims=["days","st_ocean","distance_along_contour"])
-		data_lon=xr.DataArray((lon_along_contour),name="lon_along_contour",dims=["distance_along_contour"])
-		data_lat=xr.DataArray((lat_along_contour),name="lat_along_contour",dims=["distance_along_contour"])
-		data_thick=xr.DataArray((thickness_slope_z),name="thickness_contour",dims=["st_ocean","distance_along_contour"])
-		data_days=xr.DataArray(np.double(np.array(np.arange(1,int(dayseries[n])+1))),name="days",dims=["days"])
+		data_u=xr.DataArray((Ualong),name="u_along_contour",dims=["time","st_ocean","contour_index"])
+		data_v=xr.DataArray((Ucross),name="u_cross_contour",dims=["time","st_ocean","contour_index"])
+		data_lon=xr.DataArray((lon_along_contour),name="lon_along_contour",dims=["contour_index"])
+		data_lat=xr.DataArray((lat_along_contour),name="lat_along_contour",dims=["contour_index"])
+		data_dist=xr.DataArray((distance_along_contour),name="distance_along_contour",dims=["contour_index"])
+
+
+		data_thick=xr.DataArray((Uthick),name="thickness_contour",dims=["st_ocean","contour_index"])
+		data_time=xr.DataArray(Ualong.time,name="time",dims=["time"])
 		
-		data_to_saveuv = xr.merge([data_u,data_lon,data_lat,data_thick])
-		data_to_saveuv['distance_along_contour']=np.array(distance_along_contour)
+		data_to_saveuv = xr.merge([data_u,data_v,data_lon,data_lat,data_thick,data_dist])
+		data_to_saveuv['contour_index']=Ualong.contour_index
 		data_to_saveuv['st_ocean']=np.array(st_ocean)
-		data_to_saveuv['days']=np.double(np.array(np.arange(1,int(dayseries[n])+1)))
+		data_to_saveuv['time']=Ualong.time
 		data_to_saveuv
 		data_to_saveuv.to_netcdf(save_dir + file_name + start_time +"_uv.nc")
+
+
+

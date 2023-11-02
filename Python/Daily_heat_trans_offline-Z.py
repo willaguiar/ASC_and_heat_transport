@@ -1,4 +1,4 @@
-# # Compute daily heat transport along contour offline (when is not outputed by the model). Does not discount the freezing temperature
+# # Compute monthly ASC along contour and save
 
 import cosima_cookbook as cc
 from cosima_cookbook import distributed as ccd
@@ -48,7 +48,7 @@ if __name__ == '__main__':
 	end_time0=year+'-'+month +'-' + str(monthdays[np.int(np.int(sys.argv[1])-1)])
 	print(start_time0) 
 	print(end_time0) 
-	exp = '01deg_jra55v13_ryf9091'
+	exp = '01deg_jra55v140_iaf_cycle3'
 	
 	print("Start date =" + start_time) 
 	year2=str(np.int(start_time[0:4])+1)
@@ -101,7 +101,7 @@ if __name__ == '__main__':
 	# interpolate temperature to vhrho grids:
 	
 	temp = cc.querying.getvar(exp,'temp',session,ncfile='%daily%',start_time=start_time,
-	                           end_time=end_time).sel(time=slice(start_time,end_time))
+	                           end_time=end_time).sel(time=slice(start_time,end_time)) -273.15
 	temp = temp.sel(yt_ocean=lat_range)
 	
 	temp_s = temp.copy()
@@ -135,20 +135,22 @@ if __name__ == '__main__':
 	
 	
 	# compute heat transport and depth sum:
-	temp_yflux = (temp_ygrid*vhrho).sum('st_ocean')
+	temp_yflux = (temp_ygrid*vhrho)
 	
 	
 	### Convert to transports 
 	
 	# First we also need to change coords on dxu, dyt, so we can multiply the transports:
-	dxu = cc.querying.getvar(exp, 'dxu',session, n=1, ncfile = 'ocean_grid.nc')
+	dxu = cc.querying.getvar('01deg_jra55v13_ryf9091', 'dxu',session, n=1, ncfile = 'ocean_grid.nc')
 	# select latitude range:
 	dxu = dxu.sel(yu_ocean=lat_range)
 	# remove geolon_t/geolat_t coordinates:
 	dxu = dxu.reset_coords().dxu 
 	dxu.coords['xu_ocean'] = xt_ocean.values
 	dxu = dxu.rename({'yu_ocean':'y_ocean', 'xu_ocean':'x_ocean'}) 
-	
+
+
+    
 	# convert to transport:
 	temp_yflux = temp_yflux*dxu/rho_0
 	
@@ -156,8 +158,8 @@ if __name__ == '__main__':
 	# save temp_yflux for this year:
 	ds = xr.Dataset({'temp_yflux': temp_yflux})
 	#outpath = '/g/data/v45/akm157/model_data/access-om2/'+exp+'/daily_heat_transport/temp_yflux_from_daily_'+year+'.nc'
-	outpath = '/g/data/x77/wf4500/ASC_project/model_data/access-om2/'+exp+'/daily_heat_transport/temp_yflux_from_daily_'+year+'_'+month+'.nc'
-	
+	outpath = '/scratch/v45/wf4500/model_data/OM2/IAF/temp_fluxes/daily_z/temp_yflux_from_daily_'+year+'_'+month+'.nc'
+	ds.attrs['INFO']='Does not discount freezing temperature transport, divided by cp and rho_0'	
 	
 	ds.to_netcdf(outpath)
 	
@@ -166,7 +168,7 @@ if __name__ == '__main__':
 	
 	# interpolate temperature to uhrho grids:
 	
-	temp = cc.querying.getvar(exp,'temp',session,ncfile='%daily%',start_time=start_time,end_time=end_time).sel(time=slice(start_time,end_time))
+	temp = cc.querying.getvar(exp,'temp',session,ncfile='%daily%',start_time=start_time,end_time=end_time).sel(time=slice(start_time,end_time)) -273.15
 	temp = temp.sel(yt_ocean=lat_range)
 	
 	# interpolate to correct grid:
@@ -199,13 +201,13 @@ if __name__ == '__main__':
 	
 	
 	# compute heat transport and depth sum:
-	temp_xflux = (temp_xgrid*uhrho).sum('st_ocean')
+	temp_xflux = (temp_xgrid*uhrho)
 	
 	
 	### Convert to transports 
 	
 	# First we also need to change coords on dxu, dyt, so we can multiply the transports:
-	dyt = cc.querying.getvar(exp, 'dyt',session, n=1, ncfile = 'ocean_grid.nc')
+	dyt = cc.querying.getvar('01deg_jra55v13_ryf9091', 'dyt',session, n=1, ncfile = 'ocean_grid.nc')
 	# select latitude range:
 	dyt = dyt.sel(yt_ocean=lat_range)
 	# remove geolon_t/geolat_t coordinates:
@@ -220,7 +222,8 @@ if __name__ == '__main__':
 	
 	# save temp_yflux for this year:
 	ds = xr.Dataset({'temp_xflux': temp_xflux})
-	outpath = '/g/data/x77/wf4500/ASC_project/model_data/access-om2/'+exp+'/daily_heat_transport/temp_xflux_from_daily_'+year+'_'+month+'.nc'
+	outpath = '/scratch/v45/wf4500/model_data/OM2/IAF/temp_fluxes/daily_z/temp_xflux_from_daily_'+year+'_'+month+'.nc'
+	ds.attrs['INFO']='Does not discount freezing temperature transport, divided by cp and rho_0'	
 	ds.to_netcdf(outpath)
 	print('temp_yflux and temp_xflux saved')
 	
