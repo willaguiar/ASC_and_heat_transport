@@ -10,7 +10,7 @@
 <img width="500" alt="Screenshot 2023-11-23 at 10 46 39 am" src="https://github.com/willaguiar/ASC_and_heat_transport/assets/8506963/2b3d0a33-1d26-41fb-b450-a5340af21558">
 
 (Note there are a couple of exceptions at depth where the correlations are not so weak - 300-800m depth for the seasonality in the surface regime, and perhaps 700-900m depth for the reverse regime. Maybe check significance for these?)
-Is there some way we can communicate this message more simply than the above figure? e.g. Maybe lead people in slowly with a scatter plot for a particular region before diving into this much detail?
+Is there some way we can communicate this message more simply than the above figure? e.g. Maybe lead people in slowly with a scatter plots for a few sample regions showing weak correlation before diving into this much detail?
 
 2. There are reasonable correlations between the ASC and cross slope heat transport at the same depth.
 <img width="500" alt="Screenshot 2023-11-23 at 11 00 11 am" src="https://github.com/willaguiar/ASC_and_heat_transport/assets/8506963/3c2e32ef-725b-4f19-961f-1fa0a6fabfdf">
