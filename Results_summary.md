@@ -17,7 +17,7 @@ Is there some way we can communicate this message more simply than the above fig
 
 The correlations are particularly high for the seasonality (r $\ge$ 0.8, lower row), and are around r=0.5-0.6 at depth for the interannual correlations (middle row). The regressions are in the right direction at depth for the surface and deep regimes - a weaker (less westward) ASC results in a southward heat transport anomaly. The reverse regime relationship seems to be in the wrong direction? In the reverse regime the ASC is eastward (positive), so a negative regression means that a stronger eastward ASC is linked to stronger southward transport. How does that work?
 
-3. 
+3. Information about the relationship on different timescales. The relationship is strongest for determining seasonality of heat transport. The surface correlations disappear for the interannual variability.
 
 ## Planned work we would like to add to this:
 
@@ -37,3 +37,6 @@ The correlations are particularly high for the seasonality (r $\ge$ 0.8, lower r
   
   These seem hard to distinguish?
 
+* Repeat analysis with daily data to look at the ASC / heat transport relationship on sub-seasonal timescales.
+
+* Repeat for different isobaths (650m, 2000m etc)
