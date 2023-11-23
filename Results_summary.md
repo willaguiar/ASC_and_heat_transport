@@ -16,3 +16,19 @@ Is there some way we can communicate this message more simply than the above fig
 <img width="500" alt="Screenshot 2023-11-23 at 11 00 11 am" src="https://github.com/willaguiar/ASC_and_heat_transport/assets/8506963/3c2e32ef-725b-4f19-961f-1fa0a6fabfdf">
 
 The correlations are particularly high for the seasonality (r $\ge$ 0.8, lower row), and are around r=0.5-0.6 at depth for the interannual correlations (middle row). The regressions are in the right direction at depth for the surface and deep regimes - a weaker (less westward) ASC results in a southward heat transport anomaly. The reverse regime relationship seems to be in the wrong direction? In the reverse regime the ASC is eastward (positive), so a negative regression means that a stronger eastward ASC is linked to stronger southward transport. How does that work?
+
+3. 
+
+## Planned work we would like to add to this:
+
+* Repeat the correlation analysis on an eddy / mean decomposition of the heat transport. Maybe this will tell us something about the dynamics?
+* Regional analysis. People care about single ice shelves. Do we find stronger or weaker correlations at depth for smaller regions? Do a few regional case studies in different regimes to test. e.g. Ross Sea, Totten basin, Wilkins etc.
+
+## Other analysis ideas that we may or may not need to follow up on:
+
+* How does the heat transport variability change with ASC strength? i.e. does the standard deviation (over a month or so timescale?) correlate with ASC strength? e.g. similar dynamics to Ellie's paper.
+
+* Can we get some observational evidence? e.g. a single mooring where we find that the ASC at depth is correlated with the onshore heat transport (but not the depth average ASC).
+
+* Is there any way to get more at the dynamics of why the ASC is related to the heat transport? Dynamical possibilities:
+1. The ASC strength change is a passive response to changes in the depth of isopycnals. Upward movement of isopycnals allows more access of warm CDW on deeper isopycnals. This would explain the negative correlations in both the reverse and surface/deep regimes, because upward moving isopycnals correspond to both weaker westward transport (surface / deep) and stronger eastward transport (reverse). 
