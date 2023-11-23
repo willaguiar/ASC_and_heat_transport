@@ -34,5 +34,6 @@ The correlations are particularly high for the seasonality (r $\ge$ 0.8, lower r
   1. The ASC strength change is a passive response to changes in the depth of isopycnals. Upward movement of isopycnals allows more access of warm CDW on deeper isopycnals. This would explain the negative correlations in both the reverse and surface/deep regimes, because upward moving isopycnals correspond to both weaker westward transport (surface / deep) and stronger eastward transport (reverse).
   2. A weaker ASC allows more eddy heat transport (eddy diffusion) along isopycnals to reach the shelf.
   3. A weaker ASC co-occurs with a period of stronger eddy activity that brings more heat onto the shelf (i.e. Ellie's mechanism).
+  
   These seem hard to distinguish?
 
