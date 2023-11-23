@@ -6,7 +6,7 @@
 
 ## Results
 
-##1.## We find only weak correlations between the depth average ASC and cross slope heat transport (both integrated across different regimes):
+1. We find only weak correlations between the depth average ASC and cross slope heat transport (both integrated across different regimes):
 <img width="500" alt="Screenshot 2023-11-23 at 10 46 39 am" src="https://github.com/willaguiar/ASC_and_heat_transport/assets/8506963/2b3d0a33-1d26-41fb-b450-a5340af21558">
 
 (Note there are a couple of exceptions at depth where the correlations are not so weak - 300-800m depth for the seasonality in the surface regime, and perhaps 700-900m depth for the reverse regime. Maybe check significance for these?)
@@ -31,4 +31,4 @@ The correlations are particularly high for the seasonality (r $\ge$ 0.8, lower r
 * Can we get some observational evidence? e.g. a single mooring where we find that the ASC at depth is correlated with the onshore heat transport (but not the depth average ASC).
 
 * Is there any way to get more at the dynamics of why the ASC is related to the heat transport? Dynamical possibilities:
-1. The ASC strength change is a passive response to changes in the depth of isopycnals. Upward movement of isopycnals allows more access of warm CDW on deeper isopycnals. This would explain the negative correlations in both the reverse and surface/deep regimes, because upward moving isopycnals correspond to both weaker westward transport (surface / deep) and stronger eastward transport (reverse). 
+  1. The ASC strength change is a passive response to changes in the depth of isopycnals. Upward movement of isopycnals allows more access of warm CDW on deeper isopycnals. This would explain the negative correlations in both the reverse and surface/deep regimes, because upward moving isopycnals correspond to both weaker westward transport (surface / deep) and stronger eastward transport (reverse). 
