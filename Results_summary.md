@@ -23,7 +23,7 @@ The correlations are particularly high for the seasonality (r $\ge$ 0.8, lower r
 
 ## Planned work we would like to add to this:
 
-* Repeat the correlation analysis on an eddy / mean decomposition of the heat transport. Maybe this will tell us something about the dynamics?
+* Test how correlations change if we keep the regime locations constant in time.
   
 * Regional analysis. People care about single ice shelves. Do we find stronger or weaker correlations at depth for smaller regions? Do a few regional case studies in different regimes to test. e.g. Ross Sea, Totten basin, Wilkins etc.
 
