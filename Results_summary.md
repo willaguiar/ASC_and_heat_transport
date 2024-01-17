@@ -23,7 +23,7 @@ The correlations are particularly high for the seasonality (r $\ge$ 0.8, lower r
 
 ## Planned work we would like to add to this:
 
-* Test how correlations change if we keep the regime locations constant in time.
+* Test how correlations change if we keep the regime locations constant in time. If we do this, we could also look at correlations between daily variations in ASC and CSHT.
   
 * Regional analysis. People care about single ice shelves. Do we find stronger or weaker correlations at depth for smaller regions? Do a few regional case studies in different regimes to test. e.g. Ross Sea, Totten basin, Wilkins etc.
 
