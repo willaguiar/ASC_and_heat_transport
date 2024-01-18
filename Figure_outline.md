@@ -30,6 +30,10 @@ Figure 3 shows that the correlations are higher when considering the ASC at each
 
 <img width="800" alt="Screenshot 2023-11-23 at 11 00 11 am" src="https://github.com/willaguiar/ASC_and_heat_transport/assets/8506963/3c2e32ef-725b-4f19-961f-1fa0a6fabfdf">
 
+We also want to add some panels showing scatterplots for only the depths where correlations > 0.5. This will help the reader understand what direction the ASC and CSHT are, e.g.
+
+<img width="700" src="https://github.com/willaguiar/ASC_and_heat_transport/assets/70033934/bbcd0bf5-fe33-4082-b2fe-5f40ff1fd2a5">
+
 Maybe we want to include subseasonal correlations here also, using daily data? If we do that, maybe we could move the top row here up to join Figure 2 (so then Figure 2 would show depth avg vs not depth avg, and Figure 3 would just focus on correlations at different time frequencies).
 
 ## Figure 4
