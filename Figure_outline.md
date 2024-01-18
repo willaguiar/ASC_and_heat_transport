@@ -14,13 +14,13 @@ a) Regime map. Something like this?
 
 b-c) Average cross slope heat transport and ASC at each depth in each of the regimes.
 
-<img width="700" src="https://github.com/willaguiar/ASC_and_heat_transport/assets/20695740/eb3bf978-e19c-49bb-8c56-884f8c023aa6">
+<img width="600" src="https://github.com/willaguiar/ASC_and_heat_transport/assets/20695740/eb3bf978-e19c-49bb-8c56-884f8c023aa6">
 
 
 ## Figure 2
 
 Figure 2 shows that there are only weak correlations between the depth average ASC and the cross slope heat transport at each depth, with the exception of heat transport at 600-800m depth in the Surface regime.
 
-<img width="700" alt="Screenshot 2024-01-18 at 11 10 21 am" src="https://github.com/willaguiar/ASC_and_heat_transport/assets/8506963/88fd7099-f46e-4d2c-83d3-ab776b0780af">
+<img width="800" alt="Screenshot 2024-01-18 at 11 10 21 am" src="https://github.com/willaguiar/ASC_and_heat_transport/assets/8506963/88fd7099-f46e-4d2c-83d3-ab776b0780af">
 
 Maybe we want to remove the regression lines from this plot to keep it simpler? Also, if we include daily data, maybe we want to replace this with the correlations using daily data?
