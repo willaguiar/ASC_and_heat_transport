@@ -1,7 +1,14 @@
 # Draft figure list
 
-Note that there is detailed discussion of these figure in this issue. Let's keep the discussion on that issue, and we can use this page as a summary of that discussion.
+Note that there is detailed discussion of these figure in [this issue](https://github.com/willaguiar/ASC_and_heat_transport/issues/26). Let's keep the discussion on that issue, and we can use this page as a summary of that discussion.
 
-## Motivation for this study
+### NOTE: Each figure should have its own notebook.
 
-[Many studies assume](https://github.com/willaguiar/ASC_and_heat_transport/issues/3) (or have found at particular regions / times) that there is a relationship between the ASC strength and the cross slope heat transport. But this assumption hasn't been tested comprehensively (across all time and space scales). That's our plan for this study.
+## Figure 1
+
+Regime map. Something like this?
+
+
+
+<img width="700" src="https://github.com/willaguiar/ASC_and_heat_transport/assets/8506963/6d2b26a8-6786-4712-8b40-e50cf23f24a8">
+
