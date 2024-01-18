@@ -38,8 +38,9 @@ Figure 4 possibilities:
 
 A) Repeat the above plot for a single basin in each regime, e.g. Totten for Surface, Ross for Deep, Wilkins for Reverse regime.
 
-B) Schematic highlighting how the ASC and heat transport directions/magnitude are changing in the cases where r$`^2`$>0.5
+B) Schematic highlighting how the ASC and heat transport directions/magnitude are changing in each regime, just for the depths/regimes where r^2>0.5. e.g.:
 
+<img width="654" alt="Screenshot 2024-01-18 at 10 51 45 am" src="https://github.com/willaguiar/ASC_and_heat_transport/assets/8506963/c2d6fa76-4c32-4c0c-9be4-b399d81290fe">
 
 ## Supplementary figures
 
