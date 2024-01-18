@@ -24,3 +24,11 @@ Figure 2 shows that there are only weak correlations between the depth average A
 <img width="800" alt="Screenshot 2024-01-18 at 11 10 21 am" src="https://github.com/willaguiar/ASC_and_heat_transport/assets/8506963/88fd7099-f46e-4d2c-83d3-ab776b0780af">
 
 Maybe we want to remove the regression lines from this plot to keep it simpler? Also, if we include daily data, maybe we want to replace this with the correlations using daily data?
+
+## Figure 3
+
+Figure 3 shows that the correlations are higher when considering the ASC at each depth, rather than the depth-avg ASC as in the previous figure. Also here we show how the correlations vary with different time averaging (seasonal climatology and interannual variability).
+
+<img width="800" alt="Screenshot 2023-11-23 at 11 00 11 am" src="https://github.com/willaguiar/ASC_and_heat_transport/assets/8506963/3c2e32ef-725b-4f19-961f-1fa0a6fabfdf">
+
+Maybe we want to include subseasonal correlations here also, using daily data? If we do that, maybe we could move the top row here up to join Figure 2 (so then Figure 2 would show depth avg vs not depth avg, and Figure 3 would just focus on correlations at different time frequencies).
