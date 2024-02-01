@@ -21,11 +21,21 @@ The correlations are particularly high for the seasonality (r $\ge$ 0.8, lower r
   
 4.  Correlations between eddy heat transport and the ASC are low (except for the deepest point in the Deep regime - maybe due to overflows?).
 
+5. Correlations between layerwise ASC and CSHT hold in regions of Totten, WAP and Ross, producing plots that resemble the regime averaged correlations. Correlations are also generally higher when averaging over specific regions, instead of over whole regimes like in 2. 
+![image](https://github.com/willaguiar/ASC_and_heat_transport/assets/54887782/bdc6f04f-4a6b-47da-8088-f921d464507d)
+![image](https://github.com/willaguiar/ASC_and_heat_transport/assets/54887782/da4cdf02-ec91-433f-9826-1626b6fbb05f)
+
+
 ## Planned work we would like to add to this:
 
-* Test how correlations change if we keep the regime locations constant in time. If we do this, we could also look at correlations between daily variations in ASC and CSHT.
+* [Test how correlations change if we keep the regime locations constant in time.](https://github.com/willaguiar/ASC_and_heat_transport/issues/28) 
+  * **Next steps:** If we do this, we could also look at correlations between daily variations in ASC and CSHT. (Will)
   
-* Regional analysis. People care about single ice shelves. Do we find stronger or weaker correlations at depth for smaller regions? Do a few regional case studies in different regimes to test. e.g. Ross Sea, Totten basin, Wilkins etc.
+* Regional analysis. ~~People care about single ice shelves. Do we find stronger or weaker correlations at depth for smaller regions? Do a few regional case studies in different regimes to test. e.g. Ross Sea, Totten basin, Wilkins etc.~~
+  * **Next steps:** Check that the same results hold/if correlations are better with daily data (Ellie) 
+
+* Following from 5. and Wilma's [analysis](https://github.com/willaguiar/ASC_and_heat_transport/issues/22#issuecomment-1825041263), averaging over smaller regions could retain some of the variability that is removed using regime averaged velocity/CSHT.
+  *  **Next steps:** Check if averaging velocities and CSHT over specific regions (e.g. 3, 10 deg longitude bins, or spliting reverse regime into 3 sections) before computing correlations would improve our results. ( Fabio)  
 
 ## Other analysis ideas that we may or may not need to follow up on:
 
