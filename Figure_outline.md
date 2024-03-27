@@ -18,11 +18,16 @@ b-c) Average cross slope heat transport and ASC at each depth in each of the reg
 
 ## Figure 2
 
-Figure 2 shows that there are only weak correlations between the depth average ASC and the cross slope heat transport at each depth, with the exception of heat transport at 600-800m depth in the Surface regime.
+Figure 2 shows monthly correlations in each regime. The top panel shows correlations with depth-average ASC and the middle panel shows correlations with the ASC at the local depth. Only show correlations (red lines), not regressions (green lines). Use fixed regime mask and longitude binning (width yet to be decided), with weighted averaging of the longitude bins to account for how many grid points in each bin. On the right of the two top rows, we want to show scatter pdfs for each regime in different colours, only using points from the deeper regions (>800m?).
+
+Main points for this figure:
+1. There are only weak correlations between the depth average ASC and the cross slope heat transport, with the exception of heat transport at 600-800m depth in the Surface regime. 
+2. Correlations are highest at the surface (but heat transport here is low, so not important) and at depth.
+3. Difference / similarity between regimes?
 
 <img width="800" alt="Screenshot 2024-01-18 at 11 10 21 am" src="https://github.com/willaguiar/ASC_and_heat_transport/assets/8506963/88fd7099-f46e-4d2c-83d3-ab776b0780af">
 
-Maybe we want to remove the regression lines from this plot to keep it simpler? Also, if we include daily data, maybe we want to replace this with the correlations using daily data?
+
 
 ## Figure 3
 
