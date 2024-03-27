@@ -29,9 +29,9 @@ Top row depth average ASC (needs pdf scatter on right):
 <img width="800" alt="Screenshot 2024-01-18 at 11 10 21 am" src="https://github.com/willaguiar/ASC_and_heat_transport/assets/8506963/88fd7099-f46e-4d2c-83d3-ab776b0780af">
 
 Middle row correlations with ASC at each depth (needs pdf scatter on right):
-<img width="1315" alt="Screenshot 2024-03-28 at 10 32 11 am" src="https://github.com/willaguiar/ASC_and_heat_transport/assets/8506963/19beff77-b2c6-4690-9df4-27920551ca73">
+<img width="800" alt="Screenshot 2024-03-28 at 10 32 11 am" src="https://github.com/willaguiar/ASC_and_heat_transport/assets/8506963/19beff77-b2c6-4690-9df4-27920551ca73">
 
-Bottom row: spatial map of correlation at each point around Antarctica (but not stereographic projection): Using 5deg bins?
+Bottom row: spatial map of correlation, averaged over deep water column (800-1000?) at each longitude around Antarctica (but not stereographic projection): Using 5deg bins?
 
 <img width="408" alt="Screenshot 2024-03-28 at 10 54 05 am" src="https://github.com/willaguiar/ASC_and_heat_transport/assets/8506963/67ec483f-964d-424a-8749-26c22c28c9c1">
 
