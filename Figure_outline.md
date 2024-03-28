@@ -8,15 +8,15 @@ Note that there is detailed discussion of these figures in [this issue](https://
 
 Figure 1 shows where the regimes are, and what the ASC and heat transport look like on average in each regime.
 
-a) Regime map. (Note this is from Wilma's paper - need to replace this with GMM regimes.)
+a) Regime map.
 
-<img width="700" src="https://github.com/willaguiar/ASC_and_heat_transport/assets/8506963/6d2b26a8-6786-4712-8b40-e50cf23f24a8">
+<img width="700" src="https://github.com/willaguiar/ASC_and_heat_transport/assets/20695740/6b31501b-1666-4042-b9d4-ffc523ccfc39">
 
 b-c) Average cross slope heat transport and ASC at each depth in each of the regimes.
 
 <img width="600" src="https://github.com/willaguiar/ASC_and_heat_transport/assets/20695740/eb3bf978-e19c-49bb-8c56-884f8c023aa6">
 
-## Figure 2
+## Figure 2 (Ellie)
 
 Figure 2 shows monthly correlations in each regime. The top panel shows correlations with depth-average ASC and the middle panel shows correlations with the ASC at the local depth. Only show correlations (red lines), not regressions (green lines). Use fixed regime mask and longitude binning (width yet to be decided), with weighted averaging of the longitude bins to account for how many grid points in each bin. On the right of the two top rows, we want to show scatter pdfs for each regime in different colours, only using points from the deeper regions (>800m?).
 
@@ -35,9 +35,9 @@ Bottom row: spatial map of correlation, averaged over deep water column (800-100
 
 <img width="408" alt="Screenshot 2024-03-28 at 10 54 05 am" src="https://github.com/willaguiar/ASC_and_heat_transport/assets/8506963/67ec483f-964d-424a-8749-26c22c28c9c1">
 
-## Figure 3
+## Figure 3 (Wilton)
 
-Figure 3 shows that the correlations are higher when considering the ASC at each depth, rather than the depth-avg ASC as in the previous figure. Also here we show how the correlations vary with different time averaging (seasonal climatology and interannual variability).
+Figure 3 shows how correlations vary with different time averaging (interannual variability, seasonal climatology and high frequency (daily minus seasonal climatology)). 
 
 <img width="800" alt="Screenshot 2023-11-23 at 11 00 11 am" src="https://github.com/willaguiar/ASC_and_heat_transport/assets/8506963/3c2e32ef-725b-4f19-961f-1fa0a6fabfdf">
 
