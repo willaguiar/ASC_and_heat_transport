@@ -37,15 +37,13 @@ Bottom row: spatial map of correlation, averaged over deep water column (800-100
 
 ## Figure 3 (Wilton)
 
-Figure 3 shows how correlations vary with different time averaging (interannual variability, seasonal climatology and high frequency (daily minus seasonal climatology)). 
+Figure 3 shows how correlations vary with different time averaging (interannual variability, seasonal climatology and high frequency (daily minus seasonal climatology)). As for figure 2, only show correlations (red lines), not regressions (green lines). Use fixed regime mask and longitude binning (width yet to be decided), with weighted averaging of the longitude bins to account for how many grid points in each bin. Instead of the scatterplots currently shown on the right, we want pdfs for each regime in different colours, only using points from the deeper regions (>800m?).
 
-<img width="800" alt="Screenshot 2023-11-23 at 11 00 11 am" src="https://github.com/willaguiar/ASC_and_heat_transport/assets/8506963/3c2e32ef-725b-4f19-961f-1fa0a6fabfdf">
+Main points here:
+1. High frequency correlations (eddy timescales) are surprisingly low.
+2. Strong correlations on seasonal and interannual time scales.
 
-We also want to add some panels showing scatterplots for only the depths where correlations > 0.5. This will help the reader understand what direction the ASC and CSHT are, e.g.
-
-<img width="700" src="https://github.com/willaguiar/ASC_and_heat_transport/assets/70033934/bbcd0bf5-fe33-4082-b2fe-5f40ff1fd2a5">
-
-Maybe we want to include subseasonal correlations here also, using daily data? If we do that, maybe we could move the top row here up to join Figure 2 (so then Figure 2 would show depth avg vs not depth avg, and Figure 3 would just focus on correlations at different time frequencies).
+<img width="1100" alt="Screenshot 2024-03-28 at 11 00 27 am" src="https://github.com/willaguiar/ASC_and_heat_transport/assets/8506963/1295b13b-6d30-4b5f-8846-4bea4d8f52d1">
 
 ## Figure 4
 
