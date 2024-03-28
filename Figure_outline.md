@@ -45,20 +45,14 @@ Main points here:
 
 <img width="1100" alt="Screenshot 2024-03-28 at 11 00 27 am" src="https://github.com/willaguiar/ASC_and_heat_transport/assets/8506963/1295b13b-6d30-4b5f-8846-4bea4d8f52d1">
 
-## Figure 4
+## Figure 4 (Adele to try)
 
-Figure 4 possibilities:
-
-A) Repeat the above plot for a single basin in each regime, e.g. Totten for Surface, Ross for Deep, Wilkins for Reverse regime.
-
-B) Schematic highlighting how the ASC and heat transport directions/magnitude are changing in each regime, just for the depths/regimes where r^2>0.5. e.g.:
+Schematic highlighting how the ASC and heat transport directions/magnitude are changing in each regime, just for the depths/regimes where r^2>0.5. e.g.:
 
 <img width="400" alt="Screenshot 2024-01-18 at 10 51 45 am" src="https://github.com/willaguiar/ASC_and_heat_transport/assets/8506963/c2d6fa76-4c32-4c0c-9be4-b399d81290fe">
 
-Possibly we want both these figures, so 5 total?
-
 ## Supplementary figures
 
-- If we use time-varying regimes, show how they vary in time.
+- Time series for sample regions in each regime showing interannual variability of deep ASC and deep heat transport.
 
-- Correlations/regressions in each regime with eddy/mean decomposition.
+- Correlations (e.g. Fig 2 or Fig 3) for particular individual regions to show regime average behaviour shown in Figs 2 and 3 is also representative of smaller regions.
