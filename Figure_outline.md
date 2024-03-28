@@ -18,7 +18,7 @@ b-c) Average cross slope heat transport and ASC at each depth in each of the reg
 
 ## Figure 2 (Ellie)
 
-Figure 2 shows monthly correlations in each regime. The top panel shows correlations with depth-average ASC and the middle panel shows correlations with the ASC at the local depth. Only show correlations (red lines), not regressions (green lines). Use fixed regime mask and longitude binning (width yet to be decided), with weighted averaging of the longitude bins to account for how many grid points in each bin. On the right of the two top rows, we want to show scatter pdfs for each regime in different colours, only using points from the deeper regions (>800m?).
+Figure 2 shows monthly correlations in each regime. The top panel shows correlations with depth-average ASC and the middle panel shows correlations with the ASC at the local depth. Only show correlations (red lines), not regressions (green lines). Use fixed regime mask and longitude binning (width yet to be decided), with weighted averaging of the longitude bins to account for how many grid points in each bin. On the right of the two top rows, we want to show scatter pdfs for each regime in different colours, only using points from the deeper regions (>800m?). Maybe indicate significance of correlations with bolder lines?
 
 Main points for this figure:
 1. There are only weak correlations between the depth average ASC and the cross slope heat transport, with the exception of heat transport at 600-800m depth in the Surface regime. 
