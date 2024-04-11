@@ -16,7 +16,7 @@ b-c) Average cross slope heat transport and ASC at each depth in each of the reg
 
 <img width="600" src="https://github.com/willaguiar/ASC_and_heat_transport/assets/20695740/eb3bf978-e19c-49bb-8c56-884f8c023aa6">
 
-## Figure 2 (Ellie)
+## Figure 2 (Ellie, Taimoor)
 
 Figure 2 shows monthly correlations in each regime. The top panel shows correlations with depth-average ASC and the middle panel shows correlations with the ASC at the local depth. Only show correlations (red lines), not regressions (green lines). Use fixed regime mask and longitude binning (width yet to be decided), with weighted averaging of the longitude bins to account for how many grid points in each bin. On the right of the two top rows, we want to show scatter pdfs for each regime in different colours, only using points from the deeper regions (>800m?). Maybe indicate significance of correlations with bolder lines?
 
@@ -28,7 +28,7 @@ Main points for this figure:
 Top row: correlations with depth average ASC, middle row: correlations with ASC at each depth (both need pdf scatterplot on right). Bottom row: spatial map of correlation, averaged over deep water column (400-1200m?) at each longitude around Antarctica (but not stereographic projection): Using 5deg bins?
 <img width="800" src="https://github.com/willaguiar/ASC_and_heat_transport/assets/54887782/459d9bc3-d7fb-4ec2-9ba6-2efce034716e">
 
-## Figure 3 (Wilton)
+## Figure 3 (Wilton,Taimoor)
 
 Figure 3 shows how correlations vary with different time averaging (interannual variability, seasonal climatology and high frequency (daily minus seasonal climatology)). As for figure 2, only show correlations (red lines), not regressions (green lines). Use fixed regime mask and longitude binning (width yet to be decided), with weighted averaging of the longitude bins to account for how many grid points in each bin. Instead of the scatterplots currently shown on the right, we want pdfs for each regime in different colours, only using points from the deeper regions (>800m?).
 
@@ -46,7 +46,7 @@ Schematic highlighting how the ASC and heat transport directions/magnitude are c
 
 ## Supplementary figures
 
-- Sensivitivity to bin size (repeat of Fig 2 with different bin sizes).
+- Sensivitivity to bin size (repeat of Fig 2 with different bin sizes). **Fabio**
 
 - Time series for sample regions in each regime showing interannual variability of deep ASC and deep heat transport.
 
