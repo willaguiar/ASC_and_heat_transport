@@ -53,6 +53,7 @@ Schematic highlighting how the ASC and heat transport directions/magnitude are c
 
 ## Supplementary figures
 
+- Sensivitivity to bin size (repeat of Fig 2 with different bin sizes).
+
 - Time series for sample regions in each regime showing interannual variability of deep ASC and deep heat transport.
 
-- Correlations (e.g. Fig 2 or Fig 3) for particular individual regions to show regime average behaviour shown in Figs 2 and 3 is also representative of smaller regions.
