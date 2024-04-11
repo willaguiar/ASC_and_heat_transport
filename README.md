@@ -44,7 +44,12 @@ Monthly vertically integrated CSHT, across the 1km isobath (IAF, cycle 3): `/g/d
 
 Daily CSHT, across the 1km isobath , as a function of depth(IAF, cycle 3, all years): `/g/data/v45/wf4500/ASC_project_files/Cross_slope_heat_transport/OM2_IAF/daily_z/`
 
+Daily *Deseasoned* CSHT, across the 1km isobath , as a function of depth(IAF, cycle 3, all years): `/g/data/v45/wf4500/ASC_project_files/Cross_slope_heat_transport/OM2_IAF/CSHT_daily_deseasoned.nc`
+
 Daily ASC speed on XY stepwise grid, over 1km isobath, as a function of depth (IAF, cycle 3): `/g/data/v45/wf4500/ASC_project_files/ASC_speed/OM2_IAF/`
+
+Daily *Deseasoned* ASC speed on XY stepwise grid, over 1km isobath, as a function of depth (IAF, cycle 3), binned into 3 longitude degrees bins: 
+`/g/data/v45/wf4500/ASC_project_files/Cross_slope_heat_transport/OM2_IAF/Ualong_daily_deseasoned.nc`
 
 Daily ASC speed on XY stepwise grid, over 1km isobath, as a function of depth (IAF, cycle 3), binned into 3 longitude degrees bins: 
 `/g/data/v45/wf4500/ASC_project_files/Binned_ASC_speed/OM2_IAF/`
