@@ -50,7 +50,7 @@ Schematic, or transects with real model output, highlighting how the ASC and hea
 
 - Sensitivity to bin size (repeat of Fig 2 with different bin sizes). **Fabio**
   
-- Sensitivity to including zonal and vertical convergence terms. Two panels: a) Repeat of Figure 2b without zonal convergence included, b) Repeat of Figure 2b also with added vertical convergence. ** Wilton**
+- Sensitivity to including zonal and vertical convergence terms. Two panels: a) Repeat of Figure 2b without zonal convergence included, b) Repeat of Figure 2b also with added vertical convergence. **Wilton**
 
 - Time series for sample regions in each regime showing interannual variability of deep ASC and deep heat transport.
 
