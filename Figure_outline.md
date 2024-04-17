@@ -25,7 +25,7 @@ Main points for this figure:
 2. Correlations are highest at the surface (but heat transport here is low, so not important) and at depth.
 3. Difference / similarity between regimes?
 
-Top row: correlations with depth average ASC, middle row: correlations with ASC at each depth (both need pdf scatterplot on right). Bottom row: spatial map of correlation, averaged over deep water column (400-1200m?) at each longitude around Antarctica (but not stereographic projection): Using 5deg bins?
+Top row: correlations with depth average ASC, middle row: correlations with ASC at each depth (both need pdf scatterplot on right). Bottom row: spatial map of correlation, averaged over deep water column (400-1200m?) at each longitude around Antarctica (but not stereographic projection): Using 20deg bins.
 <img width="800" src="https://github.com/willaguiar/ASC_and_heat_transport/assets/54887782/459d9bc3-d7fb-4ec2-9ba6-2efce034716e">
 
 ## Figure 3 (Wilton,Taimoor)
