@@ -66,4 +66,3 @@ CSHT in Water mass defined sigma levels:
 
 ASC speed in Water mass defined sigma levels:
 `/g/data/v45/wf4500/ASC_project_files/ASC_speed/daily_rho/WMbins_daily_rho/*`
-(updated on the read-me already)
