@@ -63,6 +63,7 @@ Daily ASC speed on XY stepwise grid, over 1km isobath, as a function of depth (I
 
 CSHT in Water mass defined sigma levels:
 `/g/data/v45/wf4500/ASC_project_files/Cross_slope_heat_transport/OM2_IAF/WMbins_daily_rho/*`
+
 ASC speed in Water mass defined sigma levels:
 `/g/data/x77/wf4500/ASC_project/ASC_speed/daily_rho/WMbins_daily_rho/*`
 (updated on the read-me already)
