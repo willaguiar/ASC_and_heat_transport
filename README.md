@@ -59,7 +59,7 @@ Daily ASC speed on XY stepwise grid, over 1km isobath, as a function of depth (I
 
 
 
-**We have decided to do the analysis using CSHT and Mass transport in $\sigma_0$ bins that are indicative of the [water mass structure in each shelf sector]()** Here areteh outputs of CSHT and ASC speed in these new levels:
+**We have decided to do the analysis using CSHT and Mass transport in $\sigma_0$ bins that are indicative of the [water mass structure in each shelf sector](https://github.com/willaguiar/ASC_and_heat_transport/issues/40#issuecomment-2151227185)** Here areteh outputs of CSHT and ASC speed in these new levels:
 
 CSHT in Water mass defined sigma levels:
 /g/data/v45/wf4500/ASC_project_files/Cross_slope_heat_transport/OM2_IAF/WMbins_daily_rho/*
