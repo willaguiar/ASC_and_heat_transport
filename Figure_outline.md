@@ -6,6 +6,10 @@ The analysis is based on
 - 10 deg bins
 - CDW definition based on age tracer
 
+Main findings:
+- ASC is less correlated with poleward heat transport than assumed
+- The correlation varies depending on the time scale and location
+
 ### NOTE: Each figure should have its own notebook.
 
 ## Figure 1 (Fabio)
