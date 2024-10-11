@@ -25,6 +25,9 @@ a) density curtain with contours for upper and lower CDW limits (time mean).
 
 b) CSHT in the CDW and surface layer as cumulative sum.
 
+![V2_Fig2_CSHTonly](https://github.com/user-attachments/assets/7950c25e-6ec9-4542-85bc-76435a07b5df)
+
+[in _figs_ GH folder](https://github.com/willaguiar/ASC_and_heat_transport/blob/main/figs/V2_Fig2_CSHTonly.png)
 
 ## Figure 3 (Ellie)
 
