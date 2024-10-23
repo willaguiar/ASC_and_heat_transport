@@ -37,13 +37,11 @@ The values are plotted on a map (as in Fig 1) with the ASC regime definition as 
 
 Repeat the same figure for the correlations of the surface layer.
 
-## Figure 4 (tbd)
+## Figure 4-5 (tbd)
 
-Figure 4 shows the time series of CSHT and ASC at key locations. Decide which locations based on Fig 3.
+Figure 4/5 for different sub-regions (Totten, Getz) showing the time series of CSHT and ASC at key locations + composite plots at a location of high and low correlation.
 
-## Figure 5 (tbd)
-
-Figure 5 shows composite plots at a location of high and low correlation. 
+(https://github.com/willaguiar/ASC_and_heat_transport/issues/26#issuecomment-2433770092)
 
 ## Supplementary figures (tbd)
 
