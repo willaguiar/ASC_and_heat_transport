@@ -32,10 +32,15 @@ b) CSHT in the CDW and surface layer as cumulative sum.
 ## Figure 3 (Ellie)
 
 Figure 3 shows how correlations between ASC and CSHT in the CDW layer vary with different time averaging (interannual variability, seasonal climatology and high frequency (daily minus seasonal climatology)). This figure has 6 panels where the rows are the different temporal resolutions and the columns show the correlation and the slope.
+* Daily transport TBD post interpolation of mask
+* [x] The values are plotted on a map (as in Fig 1) with the ASC regime definition as a bar chart for orientation at the top (maybe just the top panels?).
+    * put in fig 1 to avoid clutter
+* [x] Repeat the same figure for the correlations of the surface layer.
+NB white bar in slope is defined to be 10\% of full range.
 
-The values are plotted on a map (as in Fig 1) with the ASC regime definition as a bar chart for orientation at the top (maybe just the top panels?).
+![image](https://github.com/user-attachments/assets/764f9e29-1cbf-4e3e-93f4-4140836f070f)
 
-Repeat the same figure for the correlations of the surface layer.
+![image](https://github.com/user-attachments/assets/71883137-1f1a-42c4-b922-eca598f04a0f)
 
 ## Figure 4-5 (tbd)
 
