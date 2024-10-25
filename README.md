@@ -56,6 +56,9 @@ Daily, 10deg binned, CSHT+ZC in $\sigma_0$ for the IAF simualtion (PS: you have 
 Monthly Water masses masks for each 10 degree bins for the IAF simualtion:
 `/g/data/v45/wf4500/ASC_project_files/**_age_mask.nc`
 
+Daily _climatology_ of Water masses masks for each 10 degree bins for the _daily climatology_ of the IAF simualtion:
+`/g/data/v45/wf4500/ASC_project_files/****_age_Climatology_mask.nc`
+
 Monthly mean ASC speed  in $\sigma_0$ for the IAF simualtion:
 `/g/data/v45/wf4500/ASC_project_files/ASC_10deg_bin.nc`
 
