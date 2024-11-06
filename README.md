@@ -62,3 +62,5 @@ Daily _climatology_ of Water masses masks for each 10 degree bins for the _daily
 Monthly mean ASC speed  in $\sigma_0$ for the IAF simualtion:
 `/g/data/v45/wf4500/ASC_project_files/ASC_10deg_bin.nc`
 
+Daily climatology of ASC speed in $\sigma_0$ for the IAF simualtion:
+`/g/data/v45/wf4500/ASC_project_files/DailyU_climatology_rho_10deg_bins.nc`
