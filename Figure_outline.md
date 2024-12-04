@@ -9,6 +9,9 @@ The analysis is based on
 Main findings:
 - ASC is less correlated with poleward heat transport than assumed
 - The correlation varies depending on the time scale and location
+- Correlations are high in regions of large onshore heat transport
+
+Aim for 4 Figures (GRL style manuscript)
 
 ### NOTE: Each figure should have its own notebook.
 
@@ -25,11 +28,19 @@ Rows 2 and 4 only:
 
 ## Figure 3-4 (tbd)
 
-Figure 4/5 for different sub-regions (Totten, Getz) showing the time series of CSHT and ASC at key locations + composite plots at a location of high and low correlation.
+Figure 3/4 for different 3 sub-regions (Totten, Getz, Amundsen) showing the time series of CSHT and ASC at key locations + composite plots at a location of high and low correlation.
+
+<img width="600" alt="fig3_sub_regions" scr="https://github.com/user-attachments/assets/a7bef40a-9d8e-4633-a1d4-9b12d8d391c2">
 
 (https://github.com/willaguiar/ASC_and_heat_transport/issues/26#issuecomment-2433770092)
 
+## Figure 4
+
+Schematic? Not necessary as we don't explain a new process? Could use space to extend Figure 3.
+
 ## Supplementary figures (tbd)
 
+- Same as Fig 2 but for AASW
+- Same as Fig 3 but for a region of low correlation
 - additional figures for method section required?
 
