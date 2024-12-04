@@ -14,8 +14,7 @@ Main findings:
 
 ## Figure 1 (Fabio)
 
-Figure 1 shows time and depth average a) ASC and b) CSHT along the 1 km isobath in the 10 deg bins. Interpolate the 10 deg bin data onto a higher resolution grid for plotting. 
-
+[Figure 1](https://github.com/user-attachments/assets/c3546d06-df0a-4a7e-8959-06b499355e11)
 
 ## Figure 2 (Wilton)
 
