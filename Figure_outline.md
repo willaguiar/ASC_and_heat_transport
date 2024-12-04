@@ -14,7 +14,8 @@ Main findings:
 
 ## Figure 1 (Fabio)
 
-[Figure 1](https://github.com/user-attachments/assets/c3546d06-df0a-4a7e-8959-06b499355e11)
+![V2_Fig2_CSHT+Ualong](https://github.com/user-attachments/assets/c3546d06-df0a-4a7e-8959-06b499355e11)
+
 
 ## Figure 2 (Wilton)
 
