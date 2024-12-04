@@ -19,6 +19,8 @@ Main findings:
 
 ## Figure 2 (Ellie)
 
+Rows 2 and 4 only:
+
 <img width="600" alt="fig1_experimentalsetup" src="https://github.com/user-attachments/assets/b0e394e9-70e1-4ce0-b4e5-bcdcb4618a5a">
 
 ## Figure 3 (Ellie)
