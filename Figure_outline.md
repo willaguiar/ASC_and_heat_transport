@@ -23,8 +23,10 @@ Aim for 4 Figures (GRL style manuscript)
 ## Figure 2 (Ellie)
 
 Rows 2 and 4 only:
+daily climatology still to be updated - some missing values
 
-<img width="600" alt="fig1_experimentalsetup" src="https://github.com/user-attachments/assets/b0e394e9-70e1-4ce0-b4e5-bcdcb4618a5a">
+![download](https://github.com/user-attachments/assets/0652db66-019f-4de3-a6be-7c1da097836d)
+![download](https://github.com/user-attachments/assets/20d11d4d-ab3a-4bb7-bdba-8468e59a946b)
 
 ## Figure 3-4 (tbd)
 
