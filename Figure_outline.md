@@ -22,11 +22,9 @@ Aim for 4 Figures (GRL style manuscript)
 
 ## Figure 2 (Ellie)
 
-Rows 2 and 4 only:
-daily climatology still to be updated - some missing values
-
-![download](https://github.com/user-attachments/assets/0652db66-019f-4de3-a6be-7c1da097836d)
-![download](https://github.com/user-attachments/assets/20d11d4d-ab3a-4bb7-bdba-8468e59a946b)
+![Pasted image 20241219113626](https://github.com/user-attachments/assets/706c4ef9-57a2-44b8-b336-48101131efc9)
+alternative version without regimes in figs directory
+*uses taimoors gmm clustering regimes as placeholder - should change to wilma's
 
 ## Figure 3-4 (tbd)
 
@@ -43,6 +41,9 @@ Schematic? Not necessary as we don't explain a new process? Could use space to e
 ## Supplementary figures (tbd)
 
 - Same as Fig 2 but for AASW
+![Pasted image 20241219120226](https://github.com/user-attachments/assets/3acd01d9-2a37-44bd-953d-c4c5e9dd823c)
+
+- 
 - Same as Fig 3 but for a region of low correlation
 - additional figures for method section required?
 
