@@ -21,11 +21,9 @@ Use IAF cycle 3 for monthly,  and interannual analysis (we have daily temp, salt
 
 
 We need:
-* Contour data for 3 different isobaths: 650m, 1000m and 1500m. _Done. We chose to use the 1000m isobath_
+* Contour data for 3 different isobaths: 650m, 1000m and 1500m. _Done. We chose to use the 1000m isobath only_
 * Daily ASC speed on 1000m isobath in IAF experiment, in $\sigma_0$ coordinate, resampled monthly. _1000m now computed._
-* Daily ASC speed on 1000m isobath in RYF experiment re-run, in $\sigma_0$ coordinates. _Waiting for the rerun_
-* Daily cross slope heat transport on 1000m isobath in IAF experiment, in $\sigma_0$ coordinate, subset to monthly data _done_
-* Daily cross slope heat transport on 1000m isobath in RYF re-run experiment, in $\sigma_0$ coordinate _Waiting for the rerun_
+* Daily cross slope heat transport on 1000m isobath in IAF experiment, in $\sigma_0$ coordinate, subset to monthly data _Done_
 
 All data used is binned into 10 degrees longitude bins, which smoothes out the high spatial variability of the CSHT
 
