@@ -1,6 +1,6 @@
-# ASC_and_heat_transport
+# Antarctic Slope Current (ASC) control on cross-slope ehat transport
 
-A collaborative project to investigate the relationship between ASC variability (spatial and temporal) and cross-slope heat transport variability. This will use ACCESS-OM2-01 IAF output for monthly and seasonal analysis, and for daily variability analysis we will use a 1-year rerun of the RYF simulation.
+A collaborative project to investigate the relationship between ASC variability (spatial and temporal) and cross-slope heat transport variability. This will use ACCESS-OM2-01 IAF output.
 
 This is a central repository where we can work on analysis scripts together, suggest new analysis directions, discuss figures etc.
 
@@ -13,12 +13,12 @@ To start contributing to the code, make your own branch directly in this reposit
 
 Fortnightly Thursday mornings 9:30-11:30am.
 
+## Write-a-ton (in Canberra/Sydney time zone)
+To finish up the project we will run a in person Write-a-ton in Canberra. This will be happening April 3rd/2025, and April 4th/2025. The goal of the Write-a-ton is to have a final version of a manuscriupt, ready for submission by the last day.
+
 ## Data Plan
+Use IAF cycle 3 for monthly,  and interannual analysis (we have daily temp, salt, uhrho_et, vhrho_nt). Seasonal analysis will be done using daily data.
 
-Use IAF cycle 3 for monthly, seasonal and interannual analysis (we have daily temp, salt, uhrho_et, vhrho_nt)
-
-
-Use 1-year rerun of RYF cycle for daily analysis (we have daily temp, salt, uhrho_et, vhrho_nt)
 
 We need:
 * Contour data for 3 different isobaths: 650m, 1000m and 1500m. _Done. We chose to use the 1000m isobath_
