@@ -45,31 +45,35 @@ Up until now, we have decided to analyze the relationship between the CSHT and A
 
 #### Output locations
 
-Daily, 10deg binned,  CSHT in $\sigma_0$ for the IAF simualtion (PS: _without Zonal Convergence_ you have to do monthly averages before using the data):
+- Daily, 10deg binned,  CSHT in $\sigma_0$ for the IAF simualtion (PS: _without Zonal Convergence_ you have to do monthly averages before using the data):
 `/g/data/hh5/tmp/access-om/fbd581/ASC_project/Lon_binning/CSHT_potrho0_10degBins.nc` 
 
-Daily, 10deg binned, CSHT+ZC in $\sigma_0$ for the IAF simualtion (PS: you have to do monthly averages before using the data):
+- Daily, 10deg binned, CSHT+ZC in $\sigma_0$ for the IAF simualtion (PS: you have to do monthly averages before using the data):
 `/g/data/hh5/tmp/access-om/fbd581/ASC_project/Lon_binning/CSHT_ZC_potrho0_10degBins.nc` 
 
-Monthly Water masses masks for each 10 degree bins for the IAF simualtion:
+- Monthly Water masses masks for each 10 degree bins for the IAF simualtion:
 `/g/data/v45/wf4500/ASC_project_files/**_age_mask.nc`
 
 or
 `/g/data/ik11/users/wf4500/ASC_project_files/**_age_mask.nc`
 
-Daily _climatology_ of Water masses masks for each 10 degree bins for the _daily climatology_ of the IAF simualtion:
+- Daily _climatology_ of Water masses masks for each 10 degree bins for the _daily climatology_ of the IAF simualtion:
 `/g/data/v45/wf4500/ASC_project_files/****_age_Climatology_mask.nc`
 
 or
 `/g/data/ik11/users/wf4500/ASC_project_files/****_age_Climatology_mask.nc`
 
-Monthly mean ASC speed  in $\sigma_0$ for the IAF simualtion:
+- Daily Water masses masks, based on daily interpolated age:
+
+`/g/data/x77/wf4500/ASC_project/age_mask_daily/OM2_01_iaf_cycle3/{AASW/CDW/DSW}_YYYY-MM.nc`
+
+- Monthly mean ASC speed  in $\sigma_0$ for the IAF simualtion:
 `/g/data/v45/wf4500/ASC_project_files/ASC_10deg_bin.nc`
 
 or
 `/g/data/ik11/users/wf4500/ASC_project_files/ASC_10deg_bin.nc`
 
-Daily climatology of ASC speed in $\sigma_0$ for the IAF simualtion:
+- Daily climatology of ASC speed in $\sigma_0$ for the IAF simualtion:
 `/g/data/v45/wf4500/ASC_project_files/DailyU_climatology_rho_10deg_bins.nc`
 
 or
