@@ -78,3 +78,6 @@ or
 
 or
 `/g/data/ik11/users/wf4500/ASC_project_files/DailyU_climatology_rho_10deg_bins.nc`
+
+- Daily ASC speed, binned into 10 degree longitude bins (not a climatology):
+  `/g/data/x77/wf4500/ASC_project/ASC_sigma_daily_10deg/OM2_01_iaf_cycle3/U_daily_10deg*.nc`
