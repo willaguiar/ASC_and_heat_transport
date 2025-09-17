@@ -45,6 +45,9 @@ Up until now, we have decided to analyze the relationship between the CSHT and A
 
 #### Output locations
 
+- Daily  CSHT in $\sigma_0$ for the IAF simualtion (non-binned):
+  ` /g/data/v45/wf4500/ASC_project_files/Cross_slope_heat_transport/OM2_IAF/daily_rho/*` 
+
 - Daily, 10deg binned,  CSHT in $\sigma_0$ for the IAF simualtion (PS: _without Zonal Convergence_ you have to do monthly averages before using the data):
 `/g/data/e14/fbd581/ASC_project/Lon_binning/CSHT_potrho0_10degBins.nc` 
 
