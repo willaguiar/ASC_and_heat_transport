@@ -46,10 +46,10 @@ Up until now, we have decided to analyze the relationship between the CSHT and A
 #### Output locations
 
 - Daily, 10deg binned,  CSHT in $\sigma_0$ for the IAF simualtion (PS: _without Zonal Convergence_ you have to do monthly averages before using the data):
-`/g/data/hh5/tmp/access-om/fbd581/ASC_project/Lon_binning/CSHT_potrho0_10degBins.nc` 
+`/g/data/e14/fbd581/ASC_project/Lon_binning/CSHT_potrho0_10degBins.nc` 
 
 - Daily, 10deg binned, CSHT+ZC in $\sigma_0$ for the IAF simualtion (PS: you have to do monthly averages before using the data):
-`/g/data/hh5/tmp/access-om/fbd581/ASC_project/Lon_binning/CSHT_ZC_potrho0_10degBins.nc` 
+`/g/data/e14/fbd581/ASC_project/Lon_binning/CSHT_ZC_potrho0_10degBins.nc` 
 
 - Monthly Water masses masks for each 10 degree bins for the IAF simualtion:
 `/g/data/v45/wf4500/ASC_project_files/**_age_mask.nc`
