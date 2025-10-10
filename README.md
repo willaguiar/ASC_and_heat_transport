@@ -46,8 +46,9 @@ Up until now, we have decided to analyze the relationship between the CSHT and A
 #### Output locations
 
 - Daily  CSHT in $\sigma_0$ for the IAF simualtion (non-binned):
-  ` /g/data/v45/wf4500/ASC_project_files/Cross_slope_heat_transport/OM2_IAF/daily_rho/*` 
+  ` /g/data/v45/wf4500/ASC_project_files/Cross_slope_heat_transport/OM2_IAF/daily_rho/*`
 
+  
 - Daily, 10deg binned,  CSHT in $\sigma_0$ for the IAF simualtion (PS: _without Zonal Convergence_ you have to do monthly averages before using the data):
 `/g/data/e14/fbd581/ASC_project/Lon_binning/CSHT_potrho0_10degBins.nc` 
 
@@ -82,5 +83,12 @@ or
 or
 `/g/data/ik11/users/wf4500/ASC_project_files/DailyU_climatology_rho_10deg_bins.nc`
 
-- Daily ASC speed, binned into 10 degree longitude bins, for the 60 years of IAF simulation (not a climatology):
+- Daily ASC speed in $\sigma_0$ , binned into 10 degree longitude bins, for the 60 years of IAF simulation (not a climatology):
   `/g/data/x77/wf4500/ASC_project/ASC_sigma_daily_10deg/OM2_01_iaf_cycle3/U_daily_10deg*.nc`
+
+- Daily  ASC speed in $z^*$ for the IAF simualtion (non-binned):
+  `/g/data/x77/wf4500/ASC_project/ASC_speed/daily_z/OM2_IAF_XYgrid/*`
+
+- Daily  ASC speed in $z^*$ for the IAF simualtion, in 10 degree bins:
+  `/g/data/x77/wf4500/ASC_project/ASC_z_daily_10deg/OM2_01_iaf_cycle3/*`
+
