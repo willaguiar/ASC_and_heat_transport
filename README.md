@@ -1,4 +1,4 @@
-# Antarctic Slope Current (ASC) control on cross-slope ehat transport
+# Antarctic Slope Current (ASC) control on cross-slope heat transport
 
 A collaborative project to investigate the relationship between ASC variability (spatial and temporal) and cross-slope heat transport variability. This will use ACCESS-OM2-01 IAF output.
 
