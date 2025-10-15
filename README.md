@@ -1,6 +1,6 @@
-# ASC_and_heat_transport
+# Antarctic Slope Current (ASC) control on cross-slope heat transport
 
-A collaborative project to investigate the relationship between ASC variability (spatial and temporal) and cross-slope heat transport variability. This will initially use ACCESS-OM2-01 IAF output, potentially evolving to use output from the panan-01, panan-005, and panan-0025 simulations currently underway.
+A collaborative project to investigate the relationship between ASC variability (spatial and temporal) and cross-slope heat transport variability. This will use ACCESS-OM2-01 IAF output.
 
 This is a central repository where we can work on analysis scripts together, suggest new analysis directions, discuss figures etc.
 
@@ -11,26 +11,84 @@ To start contributing to the code, make your own branch directly in this reposit
 
 ## Hackathon schedule (in Canberra/Sydney time zone)
 
-Fortnightly on TBD:
+Fortnightly Thursday mornings 9:30-11:30am.
 
-*June 8th, 9:30 am to 11:30 am
+## Write-a-ton (in Canberra/Sydney time zone)
+To finish up the project we will run a in person Write-a-ton in Canberra. This will be happening April 3rd/2025, and April 4th/2025. The goal of the Write-a-ton is to have a final version of a manuscriupt, ready for submission by the last day.
 
-*June 22nd,  9:30 am to 11:30 am
+## Data Plan
+Use IAF cycle 3 for monthly,  and interannual analysis (we have daily temp, salt, uhrho_et, vhrho_nt). Seasonal analysis will be done using daily data.
 
 
-## Task List
+We need:
+* Contour data for 3 different isobaths: 650m, 1000m and 1500m. _Done. We chose to use the 1000m isobath only_
+* Daily ASC speed on 1000m isobath in IAF experiment, in $\sigma_0$ coordinate, resampled monthly. _1000m now computed._
+* Daily cross slope heat transport on 1000m isobath in IAF experiment, in $\sigma_0$ coordinate, subset to monthly data _Done_
 
-Task 1 (Paul,Taimoor)- Find alternative ways to define the ASC (e.g., cluster analysis)
+All data used is binned into 10 degrees longitude bins, which smoothes out the high spatial variability of the CSHT
 
-Task 2 (Wilton)- Local (point by point) correlations between the ASC speed and cross slope heat transport. Use the same method to define the 1000m isobath, and using the daily climatology from OM2-01 RYF). Check if we have heat transports in the same years of RYF simulation as the daily u,v. 
+## Dimensions to explore
 
-Task 3-  Subtract the daily climatology of ASC from the daily timeseries to look at variability at frequencies higher than seasonal.
+Using the 10 degree binned data in $\sigma_0$ we will test...
 
-Task 4 (Fabio)- Interannual variability ( annual averages of speed, Heat transport in IAF simulation). Plot timeseries ( different regions) and correlations.
+How do the correlations between ASC and cross-slope heat transport vary with:
+* Different water masses (e.g. AASW, CDW and DSW).
+* Different time frequencies. Interannual (use annual averages), seasonal (use monthly climatology), high frequency (use daily data and remove monthly climatology).
+* Different regions. Try: individual gridpoints on the isobath, small single trough-scale regions, large sectors, circumpolar integrals/averages.
 
-Task 5 (Wilton)-  Meridional heat convergence in the East Antarctic Peninsula (and Western Ross sea). Check for additional gaps in the contour.
 
-Task 6 (Wilton,Fabio)- Alternative way of calculating the cross-shelf heat transport. Specifically, transpose the zonal and meridional components to be along slope and cross slope. Then calculate the heat convergence along-slope.
+## Important updates
+Up until now, we have decided to analyze the relationship between the CSHT and ASC speed in the Water masss space. We are defining three water masses sitting on the 1000m isobath based on their age, normalized for each longitude bin:
+* _CDW_: Defined as waters in each logintude bin with normalized age above 0.95.
+* _AASW_: Surface waters above the CDW
+* _DSW_: Dense waters below CDW
 
-Task 7 (Paul,Ellie,Fabio)- Literature review (Dynamics, and previous work on ASC vs cross slope heat transport).
+#### Output locations
+
+- Daily  CSHT in $\sigma_0$ for the IAF simualtion (non-binned):
+  ` /g/data/v45/wf4500/ASC_project_files/Cross_slope_heat_transport/OM2_IAF/daily_rho/*`
+
+  
+- Daily, 10deg binned,  CSHT in $\sigma_0$ for the IAF simualtion (PS: _without Zonal Convergence_ you have to do monthly averages before using the data):
+`/g/data/e14/fbd581/ASC_project/Lon_binning/CSHT_potrho0_10degBins.nc` 
+
+- Daily, 10deg binned, CSHT+ZC in $\sigma_0$ for the IAF simualtion (PS: you have to do monthly averages before using the data):
+`/g/data/e14/fbd581/ASC_project/Lon_binning/CSHT_ZC_potrho0_10degBins.nc` 
+
+- Monthly Water masses masks for each 10 degree bins for the IAF simualtion:
+`/g/data/v45/wf4500/ASC_project_files/**_age_mask.nc`
+
+or
+`/g/data/ik11/users/wf4500/ASC_project_files/**_age_mask.nc`
+
+- Daily _climatology_ of Water masses masks for each 10 degree bins for the _daily climatology_ of the IAF simualtion:
+`/g/data/v45/wf4500/ASC_project_files/****_age_Climatology_mask.nc`
+
+or
+`/g/data/ik11/users/wf4500/ASC_project_files/****_age_Climatology_mask.nc`
+
+- Daily Water masses masks, based on daily interpolated age:
+
+`/g/data/x77/wf4500/ASC_project/age_mask_daily/OM2_01_iaf_cycle3/{AASW/CDW/DSW}_YYYY-MM.nc`
+
+- Monthly mean ASC speed  in $\sigma_0$ for the IAF simualtion:
+`/g/data/v45/wf4500/ASC_project_files/ASC_10deg_bin.nc`
+
+or
+`/g/data/ik11/users/wf4500/ASC_project_files/ASC_10deg_bin.nc`
+
+- Daily climatology of ASC speed in $\sigma_0$ for the IAF simualtion:
+`/g/data/v45/wf4500/ASC_project_files/DailyU_climatology_rho_10deg_bins.nc`
+
+or
+`/g/data/ik11/users/wf4500/ASC_project_files/DailyU_climatology_rho_10deg_bins.nc`
+
+- Daily ASC speed in $\sigma_0$ , binned into 10 degree longitude bins, for the 60 years of IAF simulation (not a climatology):
+  `/g/data/x77/wf4500/ASC_project/ASC_sigma_daily_10deg/OM2_01_iaf_cycle3/U_daily_10deg*.nc`
+
+- Daily  ASC speed in $z^*$ for the IAF simualtion (non-binned):
+  `/g/data/x77/wf4500/ASC_project/ASC_speed/daily_z/OM2_IAF_XYgrid/*`
+
+- Daily  ASC speed in $z^*$ for the IAF simualtion, in 10 degree bins:
+  `/g/data/x77/wf4500/ASC_project/ASC_z_daily_10deg/OM2_01_iaf_cycle3/*`
 
