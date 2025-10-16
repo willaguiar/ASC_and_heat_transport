@@ -86,9 +86,15 @@ or
 - Daily ASC speed in $\sigma_0$ , binned into 10 degree longitude bins, for the 60 years of IAF simulation (not a climatology):
   `/g/data/x77/wf4500/ASC_project/ASC_sigma_daily_10deg/OM2_01_iaf_cycle3/U_daily_10deg*.nc`
 
-- Daily  ASC speed in $z^*$ for the IAF simualtion (non-binned):
+- Daily  ASC speed in $z^*$ for the IAF simualtion on the 1000 m isobath (non-binned):
   `/g/data/x77/wf4500/ASC_project/ASC_speed/daily_z/OM2_IAF_XYgrid/*`
 
-- Daily  ASC speed in $z^*$ for the IAF simualtion, in 10 degree bins:
+- Daily  ASC speed in $z^*$ for the IAF simualtion on the 1500 m isobath (non-binned):
+  `/g/data/x77/wf4500/ASC_project/ASC_speed/daily_z/OM2_IAF_XYgrid_1500m/*`
+
+- Daily  ASC speed in $z^*$ for the IAF simualtion on the 650 m isobath (non-binned):
+  `/g/data/x77/wf4500/ASC_project/ASC_speed/daily_z/OM2_IAF_XYgrid_650m/*`
+
+- Daily  ASC speed in $z^*$ for the IAF simualtion  on the 1000 m isobath , in 10 degree bins:
   `/g/data/x77/wf4500/ASC_project/ASC_z_daily_10deg/OM2_01_iaf_cycle3/*`
 
